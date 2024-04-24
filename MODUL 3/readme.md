@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul Tipe Data</h1>
+# <h1 align="center">Laporan Praktikum Modul sorting</h1>
 <p align="center">Gabriella F Pandiangan</p>
 
 ## Features
@@ -8,272 +8,281 @@
 
 
 ## Dasar Teori
-
+1. Konsep Dasar Sorting
+ => Algoritma Sorting adalah algoritma untuk meletakkan kumpulan elemen data ke dalam urutan
+tertentu, berdasarkan satu atau beberapa kunci ke dalam tiap-tiap elemen
+=> Berdasarkan data terurutnya, algoritma sorting dibagi menjadi dua jenis, yaitu:
+o Ascending; pengurutan dari terkecil hingga terbesar. Contoh: a, b, c, d, e.
+o Descending; pengurutan dari nilai terbesar hingga terkecil. Contoh: e, d, c, b, a
+2. Insertion Sort
+Konsep dasar Algoritma Insertion Sort
+Pseudocode Algoritma Insertion Sort:
+Prosedur Insertion Sort dalam bahasa C++:
+=> Cara mengurutkannya adalah dicek satu persatu mulai dari yang kedua sampai
+dengan yang terakhir.
+=> Apabila ditemukan data yang lebih kecil dari data sebelumnya, maka data tersebut
+disisipkan pada posisi yang sesuai
 ## Guided 
-
-### 1. Program input array 3 dimensi
-```int main() 
-{
-     // Deklarasi array
-    int arr[2] [3] [3];
-    // Input elemen
-    for (int x = 0; x < 2; x++)
-    {
-        for (int y = 0; y < 3; y++)
-        {
-            for (int z = 0; z < 3; z++)
-            { 
-                 cout << "Input Array [" << x << "] [" << y <<"] [" << z << "] = ";
-                 cin >> arr [x] [y] [z];
-            }
-        }
-                 cout << endl;
-    }
-
-// Output array
-for (int x = 0; x < 2; x++)
-{
-    for (int y = 0; y < 3; y++)
-    {
-        for (int z= 0; z < 3; z++)
-        {
-            cout << "Data array[" << x << "] [" << y << "] [" << z << "] = " << arr [x] [y] [z] << ends;
-        }
-    }
-}
-cout << endl;
-// Tampilkan array
-    for (int x = 0; x < 2; x++)
-    {
-       for (int y = 0; y < 3; y++)
-       {
-         for (int z = 0; z < 3; z++)
-         {
-            cout << arr [x] [y] [z] << ends;
-         }
-        cout << endl;
-       }
-    cout << endl;
-    }
-    return 0;
-}
-
-   
-   
-}
-
+### 1. Mengurutkan secara ascending untuk data numerik bertipe double menggunakan Algoritma Bubble Sort
 ```
-### 2. Panjang Array
-```#include <iostream>
+#include <iostream>
+
 using namespace std;
 
-int main () 
-{
-    int maks, a, lokasi;
-    cout << "Masukkan panjang array: ";
-    cin >> a;
-
-    if (a <= 0) {
-        cout << "Panjang array harus lebih besar dari 0." << endl;
-        return 1; 
-    }
-
-    int array[a];
-    cout << "Masukkan " << a << " angka/n";
-
-    for (int i = 0; i < a; i++) {
-        cout << "Array ke-" << (i + 1) << ": ";
-        cin >> array [i];
-    }
-
-    maks = array[0];
-    lokasi = 0;
+void bubble_sort(double arr[], int length){
+    bool not_sorted = true;
+    int j=0;
+    double tmp;
     
-    for (int i = 1; i < a; i++) {
-        if (array[i] > maks) {
-            maks = array [1];
-            lokasi = i;
-        }
-    }
-    cout << "Nilai maksimum adalah " << maks << " berada di Array ke " << (lokasi +1)<<endl;
+    while (not_sorted){
+        not_sorted = false;
+        j++;
+        for (int i = 0; i < length - j; i++){
+            if (arr[i] > arr[i + 1]) {
+                tmp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = tmp;
+                not_sorted = true;
+             }//end of if
+        }//end of for loop
+     }//end of while loop
+ }//end of bubble_sort
 
-    return 0; 
+void print_array(double a[], int length) {
+    for(int i=0; i<length; i++) {
+        cout << a[i] << "\t";
+    }
+    cout << endl;
+}
+int main() {
+    int length = 5;
+    double a[] = {22.1, 15.3, 8.2, 33.21, 99,99};
+    cout << "Urutan bilangan sebelum sorting: " << endl;
+    print_array(a, length);
+    bubble_sort(a, length);
+    cout << "\nUrutan bilangan setelah sorting: " << endl;
+    print_array(a, length);
+}
+```
+// Output array
+Urutan bilangan sebelum sorting: 
+22.1    15.3    8.2     33.21   99
+
+Urutan bilangan setelah sorting: 
+8.2     15.3    22.1    33.21   99
+```
+### 2. Mengurutkan karakter secara descending (dari terbesar hingga terkecil) menggunakan Algoritma Insertion Sort
+```
+#include <iostream>
+using namespace std;
+void insertion_sort(char arr[], int length) {
+    int i, j;
+    char tmp;
+    for (i = 1; i < length; i++) {
+        j = i;
+
+        while (j > 0 && arr[j - 1] < arr[j]) {
+            tmp = arr[j];
+            arr[j] = arr[j - 1];
+            arr[j - 1] = tmp;
+            j--;
+        }//end of while loop
+    }//end of for loop
+}
+void print_array(char a[], int length) {
+    for(int i=0; i<length; i++) {
+        cout << a[i] << "\t";
+    }
+    cout << endl;
+}
+int main() {
+    int length = 6;
+    char a[length] = {'c', 'f', 'a', 'z', 'd', 'p'};
+    cout << "Urutan karakter sebelum sorting: " << endl;
+    print_array(a, length);
+    insertion_sort(a, length);
+    cout << "\nUrutan karakter setelah sorting: " << endl;
+    print_array(a, length);
 }
 
+//output array
+Urutan karakter sebelum sorting: 
+c       f       a       z       d       p
 
+Urutan karakter setelah sorting: 
+z       p       f       d       c       a
 ## Unguided
 
-### 1. Buatlah program untuk menampilkan Output seperti berikut dengan data yang diinputkan oleh user!
+### 1. Kelas S1 IF 2016 G memiliki 5 mahasiswa. Pada akhir semester mereka menerima lembar Indeks Prestasi Semester (IPS), masing-masing mahasiswa tersebut memiliki IPS sebagai berikut: {3.8, 2.9, 3.3, 4.0, 2.4}. Buatlah program untuk mengurutkan IPS mahasiswa tersebut dari yang terbesar hingga terkecil dengan menggunakan algoritma Selection Sort!
 ```C++
 #include <iostream>
-#include <vector>
-#include <sstream>
 
-int main() {
-    std::cout << "Data array: ";
-    std::vector<int> numbers;
-    numbers.reserve(10);
-
-    std::string input;
-    std::getline(std::cin, input);
-    std::istringstream iss(input);
-    int num;
-    while (iss >> num) {
-        numbers.push_back(num);
-    }
-    std::vector<int> evenNumbers,oddNumbers;
-    for (int num : numbers) {
-        if (num % 2 == 0) {
-            evenNumbers.push_back(num);
-        } else {
-            oddNumbers.push_back(num);
+void selectionSort(double arr[], int n) {
+    for (int i = 0; i < n - 1; ++i) {
+        int maxIndex = i;
+        for (int j = i + 1; j < n; ++j) {
+            if (arr[j] > arr[maxIndex]) {
+                maxIndex = j;
+            }
+        }
+        if (maxIndex != i) {
+            // Swap arr[i] and arr[maxIndex]
+            double temp = arr[i];
+            arr[i] = arr[maxIndex];
+            arr[maxIndex] = temp;
         }
     }
-    std::cout << "Nomor Genap: ";
-    for (int i = 0; i < evenNumbers.size(); ++i) {
-        std::cout << evenNumbers[i];
-        if (i != evenNumbers.size() - 1) {
-            std::cout << ",";
-        }
-    }
-    std::cout << std::endl;
-    std::cout << "Nomor Ganjil: ";
-    for (int i = 0; i < oddNumbers.size(); ++i) {
-        std::cout << oddNumbers[i];
-        if (i != oddNumbers.size() - 1) {
-            std::cout << ",";
-        }
-    }
-    std::cout << std::endl;
-    
-    return 0;
 }
 
-### 2. Buatlah program Input array tiga dimensi (seperti pada guided) tetapi jumlah atau ukuran elemennya diinputkan oleh user!
+int main() {
+    const int jumlahMahasiswa = 5;
+    double IPS[jumlahMahasiswa] = {3.8, 2.9, 3.3, 4.0, 2.4};
+
+    std::cout << "IPS sebelum diurutkan:" << std::endl;
+    for (int i = 0; i < jumlahMahasiswa; ++i) {
+        std::cout << IPS[i] << " ";
+    }
+    std::cout << std::endl;
+
+    selectionSort(IPS, jumlahMahasiswa);
+
+    std::cout << "IPS setelah diurutkan:" << std::endl;
+    for (int i = 0; i < jumlahMahasiswa; ++i) {
+        std::cout << IPS[i] << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
+//output array
+IPS sebelum diurutkan:
+3.8 2.9 3.3 4 2.4 
+IPS setelah diurutkan:
+4 3.8 3.3 2.9 2.4
+
+### 2. Pak RT memiliki 10 warga dengan nama: siti, situ, sana, ana, ani, caca, cici, dida, dodo, dan dadi. Supaya mudah dalam melakukan pencarian, Pak RT akan mengurutkan namanama tersebut sesuai dengan alfabet. Buatlah program untuk membantu Pak RT dengan menggunakan algoritma Bubble Sort!
 
 ```C++
 #include <iostream>
+#include <string>
 
 using namespace std;
 
+// Fungsi untuk menukar dua elemen
+void swap(string &a, string &b) {
+    string temp = a;
+    a = b;
+    b = temp;
+}
+
+// Fungsi untuk melakukan sorting menggunakan Bubble Sort
+void bubbleSort(string arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            // Membandingkan dua string secara alfabetis
+            if (arr[j] > arr[j+1]) {
+                // Jika arr[j] lebih besar dari arr[j+1], swap
+                swap(arr[j], arr[j+1]);
+            }
+        }
+    }
+}
+
 int main() {
-    int x_size, y_size, z_size;
+    // Array of names
+    string names[] = {"siti", "situ", "sana", "ana", "ani", "caca", "cici", "dida", "dodo", "dadi"};
+    int n = sizeof(names)/sizeof(names[0]);
 
-    // Input ukuran array dari user
-    cout << "Masukkan ukuran array dalam dimensi X: ";
-    cin >> x_size;
-    cout << "Masukkan ukuran array dalam dimensi Y: ";
-    cin >> y_size;
-    cout << "Masukkan ukuran array dalam dimensi Z: ";
-    cin >> z_size;
-
-    // Inisialisasi array tiga dimensi dengan ukuran yang diberikan
-    int arr[x_size][y_size][z_size];
-
-    // Mengisi array dengan nilai yang diinputkan
-    cout << "Masukkan elemen-elemen array:\n";
-    for (int i = 0; i < x_size; ++i) {
-        for (int j = 0; j < y_size; ++j) {
-            for (int k = 0; k < z_size; ++k) {
-                cout << "arr[" << i << "][" << j << "][" << k << "]: ";
-                cin >> arr[i][j][k];
-            }
-        }
+    // Menampilkan nama sebelum diurutkan
+    cout << "Nama sebelum diurutkan: ";
+    for (int i = 0; i < n; i++) {
+        cout << names[i] << " ";
     }
+    cout << endl;
 
-    // Menampilkan isi array
-    cout << "\nIsi array:\n";
-    for (int i = 0; i < x_size; ++i) {
-        for (int j = 0; j < y_size; ++j) {
-            for (int k = 0; k < z_size; ++k) {
-                cout << "arr[" << i << "][" << j << "][" << k << "] = " << arr[i][j][k] << endl;
-            }
-        }
+    // Memanggil fungsi bubbleSort untuk mengurutkan nama
+    bubbleSort(names, n);
+
+    // Menampilkan nama setelah diurutkan
+    cout << "Nama setelah diurutkan: ";
+    for (int i = 0; i < n; i++) {
+        cout << names[i] << " ";
     }
+    cout << endl;
 
     return 0;
 }
 
-### 3. Buatlah program menu untuk mencari nilai Maksimum, Minimum dan Nilai
-rata – rata dari suatu array dengan input yang dimasukan oleh user!
+//output
+Nama sebelum diurutkan: siti situ sana ana ani caca cici dida dodo dadi 
+Nama setelah diurutkan: ana ani caca cici dadi dida dodo sana siti situ
+
+### 3. Buatlah program yang meminta user menginputkan suatu bilangan n dan meminta user untuk menginputkan sejumlah n karakter. Kemudian program akan melakukan sorting secara menaik (ascending) dan menurun (descending)
 ```C++
 #include <iostream>
-#include <vector>
+using namespace std;
 
-// Fungsi untuk mencari nilai maksimum dalam array
-int findMax(const std::vector<int>& arr) {
-    int max = arr[0];
-    for (int i = 1; i < arr.size(); ++i) {
-        if (arr[i] > max) {
-            max = arr[i];
-        }
-    }
-    return max;
+// Fungsi untuk menukar nilai dua variabel
+void swap(char *a, char *b) {
+    char temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
-// Fungsi untuk mencari nilai minimum dalam array
-int findMin(const std::vector<int>& arr) {
-    int min = arr[0];
-    for (int i = 1; i < arr.size(); ++i) {
-        if (arr[i] < min) {
-            min = arr[i];
+// Fungsi untuk melakukan sorting secara ascending
+void ascendingSort(char arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                swap(&arr[j], &arr[j+1]);
+            }
         }
     }
-    return min;
 }
 
-// Fungsi untuk mencari nilai rata-rata dalam array
-double findAverage(const std::vector<int>& arr) {
-    int sum = 0;
-    for (int num : arr) {
-        sum += num;
+// Fungsi untuk melakukan sorting secara descending
+void descendingSort(char arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] < arr[j+1]) {
+                swap(&arr[j], &arr[j+1]);
+            }
+        }
     }
-    return static_cast<double>(sum) / arr.size();
 }
 
 int main() {
-    std::vector<int> numbers;
+    int n;
+    cout << "Masukkan jumlah karakter: ";
+    cin >> n;
 
-    // Meminta pengguna untuk memasukkan elemen-elemen array
-    std::cout << "Masukkan elemen-elemen array (akhiri dengan -1):\n";
-    int num;
-    while (true) {
-        std::cin >> num;
-        if (num == -1) {
-            break;
-        }
-        numbers.push_back(num);
+    char characters[n];
+
+    cout << "Masukkan " << n << " karakter:\n";
+    for (int i = 0; i < n; i++) {
+        cin >> characters[i];
     }
 
-    // Menampilkan menu dan memproses pilihan pengguna
-    int choice;
-    do {
-        std::cout << "\nMenu:\n";
-        std::cout << "1. Cari nilai maksimum\n";
-        std::cout << "2. Cari nilai minimum\n";
-        std::cout << "3. Cari nilai rata-rata\n";
-        std::cout << "4. Keluar\n";
-        std::cout << "Pilih: ";
-        std::cin >> choice;
+    ascendingSort(characters, n);
+    cout << "Hasil sorting ascending: ";
+    for (int i = 0; i < n; i++) {
+        cout << characters[i] << " ";
+    }
+    cout << endl;
 
-        switch (choice) {
-            case 1:
-                std::cout << "Nilai maksimum: " << findMax(numbers) << std::endl;
-                break;
-            case 2:
-                std::cout << "Nilai minimum: " << findMin(numbers) << std::endl;
-                break;
-            case 3:
-                std::cout << "Nilai rata-rata: " << findAverage(numbers) << std::endl;
-                break;
-            case 4:
-                std::cout << "Terima kasih!\n";
-                break;
-            default:
-                std::cout << "Pilihan tidak valid. Silakan coba lagi.\n";
-        }
-    } while (choice != 4);
+    descendingSort(characters, n);
+    cout << "Hasil sorting descending: ";
+    for (int i = 0; i < n; i++) {
+        cout << characters[i] << " ";
+    }
+    cout << endl;
 
     return 0;
 }
 
+//output
+Masukkan jumlah karakter: 5
+Masukkan 5 karakter:
+a,c,b,e,d
+Hasil sorting ascending: a b c d e 
+Hasil sorting descending: e d c b a
