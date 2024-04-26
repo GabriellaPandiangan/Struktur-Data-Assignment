@@ -100,12 +100,14 @@ return 0;
 } 
 ```
 //hasil output
+```
 Informasi Buku
 Judul : Algoritma Pemprograman
 Pengarang : Gabriella
 Penerbit : Gramedia
 Tebal Halaman300
 Harga buku : 120000
+```
 
 //buku 2
 #include <iostream>
@@ -210,7 +212,7 @@ return 0;
 }
 
 //hasil output
-Nama Hewan: Singa
+```Nama Hewan: Singa
  Jenis Kelamin: Jantan
  Cara Berkembangbiak: Melahirkan
  Alat Pernafasan: Paru-paru
@@ -227,6 +229,7 @@ Nama Hewan: Singa
  Apakah Karnivora:  Ya
  Bentuk Sirip Membulat
  Bentuk Pertahanan Diri:  Menyerang
+```
 
 ## Unguided
 
@@ -293,8 +296,10 @@ int main() {
 
     return 0;
 }
+```
 
 //hasil output
+```
 Koleksi Buku:
 Buku 1:
 Judul: Pride and Prejudice
@@ -330,6 +335,7 @@ Pengarang: J.D. Salinger
 Penerbit: Publisher E
 Tebal: 270 halaman
 Harga: 19.99
+```
 
 
 ### 2. Apa yang terjadi jika deklarasi variabel struct yang dibuat pada tugas guided I,berjenis Array.
@@ -397,8 +403,9 @@ int main() {
     return 0;
 }
 ```
+
 //hasil output
-Koleksi Buku:
+```Koleksi Buku:
 Buku 1:
 Judul: Pride and Prejudice
 Pengarang: Jane Austen
@@ -433,3 +440,4 @@ Pengarang: J.D. Salinger
 Penerbit: Publisher E
 Tebal Buku: 270 halaman
 Harga Buku: 19.99
+```
