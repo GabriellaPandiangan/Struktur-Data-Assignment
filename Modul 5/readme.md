@@ -99,9 +99,9 @@ cout << "Harga buku" << buku1.harga_buku << endl;
 return 0;
 } 
 ```
+
 //hasil output
-```
-Informasi Buku
+```Informasi Buku
 Judul : Algoritma Pemprograman
 Pengarang : Gabriella
 Penerbit : Gramedia
@@ -110,7 +110,7 @@ Harga buku : 120000
 ```
 
 //buku 2
-#include <iostream>
+```#include <iostream>
 using namespace std;
 
 struct buku {
@@ -139,6 +139,7 @@ cout << "Harga buku" << buku2.harga_buku << endl;
 
 return 0;
 }
+```
 
 
 ### 2. Buatlah sebuah struktur dengan skema seperti dibawah, isi dengan nilai kemudian jalankan.Hewan, Nama_hewan, Jenis_kelamin, Cara berkembangbiak, Alat pernafasan, Tempat hidup, Apakah Karnivora ?, Hewan Darat, Jumlah Kaki, Apakah menyusui?, Suara. Hewan Laut, Bentuk sirip, Bentuk pertahanan diri
