@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul Tipe Data</h1>
+# <h1 align="center">Laporan Praktikum Modul PRIORITY QUEUE DAN HEAPS</h1>
 <p align="center">Gabriella F Pandiangan</p>
 
 ## Features
@@ -8,442 +8,306 @@
 
 
 ## Dasar Teori
-STACK
-Stack adalah struktur data sederhana yang digunakan untuk menyimpan data (mirip
-dengan Linked Lists). Dalam tumpukan, urutan kedatangan data penting. Sebuah
-tumpukan piring di kafetaria adalah contoh bagus dari tumpukan. Piring
-ditambahkan ke tumpukan saat mereka dibersihkan dan ditempatkan di bagian
-atas. Ketika sebuah piring dibutuhkan, diambil dari bagian atas tumpukan. Piring
-pertama yang ditempatkan di tumpukan adalah yang terakhir digunakan.
-Definisi: Sebuah tumpukan adalah daftar terurut di mana penyisipan dan
-penghapusan dilakukan di satu ujung, disebut atas. Elemen terakhir yang
-dimasukkan adalah yang pertama dihapus. Oleh karena itu, disebut daftar Last in
-First out (LIFO).
-Operasi pada stack melibatkan beberapa fungsi dasar yang dapat dilakukan pada
-struktur data ini. Berikut adalah beberapa operasi umum pada stack:
-a. Push (Masukkan): Menambahkan elemen ke dalam tumpukan pada posisi paling
-atas atau ujung.
-b. Pop (Keluarkan): Menghapus elemen dari posisi paling atas atau ujung tumpukan.
-c. Top (Atas): Mendapatkan nilai atau melihat elemen teratas pada tumpukan tanpa
-menghapusnya.
-d. IsEmpty (Kosong): Memeriksa apakah tumpukan kosong atau tidak.
-e. IsFull (Penuh): Memeriksa apakah tumpukan penuh atau tidak (terutama pada
-implementasi tumpukan dengan kapasitas terbatas).
-f. Size (Ukuran): Mengembalikan jumlah elemen yang ada dalam tumpukan.
-g. Peek (Lihat): Melihat nilai atau elemen pada posisi tertentu dalam tumpukan
-tanpa menghapusnya.
-h. Clear (Hapus Semua): Mengosongkan atau menghapus semua elemen dari
-tumpukan.
-i. Search (Cari): Mencari keberadaan elemen tertentu dalam tumpukan.
+Priority queue adalah jenis queue yang mengatur elemen berdasarkan nilai
+prioritasnya. Elemen dengan nilai prioritas lebih tinggi umumnya akan diambil sebelum elemen dengan nilai prioritas lebih rendah.
+
+Dalam priority queue, setiap elemen memiliki nilai prioritas yang terkait dengannya. Ketika menambahkan elemen ke antrian, elemen tersebut dimasukkan ke dalam posisi berdasarkan nilai prioritasnya. Misalnya, jika menambahkan elemen dengan nilai prioritas tinggi ke priority queue, elemen tersebut mungkin dimasukkan di dekat bagian depan antrian, sementara elemen dengan nilai prioritas rendah mungkin dimasukkan di dekat bagian belakang.
+
+Ada beberapa cara untuk mengimplementasikan priority queue, termasuk
+menggunakan array, linked list, heap, atau binary search tree. Setiap metode memiliki kelebihan dan kekurangannya sendiri, dan pilihan terbaik akan tergantung pada kebutuhan spesifik aplikasi.
+Priority queue sering digunakan dalam sistem real-time, di mana urutan pemrosesan elemen dapat memiliki konsekuensi yang signifikan. Selain itu, priority queue juga digunakan dalam algoritma untuk meningkatkan efisiensi, seperti algoritma Dijkstra untuk menemukan jalur terpendek dalam grafik dan algoritma pencarian A* untuk pencarian jalur.
+
+Heap dalam struktur data adalah struktur berbasis pohon biner (binary tree) dengan aturan tertentu. Heap memiliki beberapa ciri khas yang membedakannya dari pohon binary biasa, yaitu:
+Complete Binary Tree: Heap harus berbentuk complete binary tree, di mana
+setiap levelnya terisi penuh kecuali level paling bawah. Level paling bawah
+pun harus terisi dari kiri ke kanan.
+Order Property: Heap bisa dibagi menjadi dua jenis, yaitu max-heap dan
+min-heap.
+Max-heap: pada setiap node, nilai orang tua (parent) harus lebih besar atau
+sama dengan nilai anaknya (children).
+Min-heap: pada setiap node, nilai orang tua harus lebih kecil atau sama
+dengan nilai anaknya.
+Dengan aturan ini, nilai terbesar (max-heap) atau terkecil (min-heap) akan selalu berada di node paling atas (root). Heap sering digunakan untuk algoritma sorting seperti heap sort dan juga untuk priority queue.
+Heap memiliki kelebihan dalam hal kecepatan operasi. Menambah atau menghapus
+elemen dalam heap hanya membutuhkan waktu O(log N), sedangkan mencari elemen
+minimum/maksimum hanya membutuhkan waktu konstan O(1
 
 
-QUEUE
-Queue adalah struktur data yang digunakan untuk menyimpan data dengan metode
-FIFO (First-In First-Out). Data yang pertama dimasukkan ke dalam queue akan
-menjadi data yang pertama pula untuk dikeluarkan dari queue. Queue mirip dengan
-konsep antrian pada kehidupan sehari-hari, dimana konsumen yang datang lebih
-dulu akan dilayani terlebih dahulu.
-Implementasi queue dapat dilakukan dengan menggunakan array atau linked list.
-Struktur data queue terdiri dari dua pointer yaitu front dan rear. Front/head adalah
-pointer ke elemen pertama dalam queue dan rear/tail/back adalah pointer ke elemen
-terakhir dalam queue.
-
-Perbedaan antara stack dan queue terdapat pada aturan penambahan dan
-penghapusan elemen. Pada stack, operasi penambahan dan penghapusan elemen
-dilakukan di satu ujung. Elemen yang terakhir diinputkan akan berada paling dengan
-dengan ujung atau dianggap paling atas sehingga pada operasi penghapusan, elemen
-teratas tersebut akan dihapus paling awal, sifat demikian dikenal dengan LIFO.
-Pada Queue, operasi tersebut dilakukan ditempat berbeda (melalui salah satu ujung)
-karena perubahan data selalu mengacu pada Head, maka hanya ada 1 jenis insert
-maupun delete. Prosedur ini sering disebut Enqueue dan Dequeue pada kasus Queue.
-Untuk Enqueue, cukup tambahkan elemen setelah elemen terakhir Queue, dan untuk
-Dequeue, cukup "geser"kan Head menjadi elemen selanjutnya.
-Operasi pada Queue
-1. enqueue() : menambahkan data ke dalam queue.
-2. dequeue() : mengeluarkan data dari queue.
-3. peek() : mengambil data dari queue tanpa menghapusnya.
-4. isEmpty() : mengecek apakah queue kosong atau tidak.
-5. isFull() : mengecek apakah queue penuh atau tidak.
-6. size() : menghitung jumlah elemen dalam queue.
 
 ## Guided 
 
-### 1. Sourcecode
+### 1. 
 ```
 #include <iostream>
-using namespace std;
+#include <algorithm>
 
-string arrayBuku[5];
-int maksimal = 5, top = 0;
+int H[50];
+int heapSize = -1;
 
-bool isFull() {
-    return (top == maksimal);
+int parent(int i) {
+    return (i - 1) / 2;
 }
 
-bool isEmpty() {
-    return (top == 0);
+int leftChild(int i) {
+    return ((2 * i) + 1);
 }
 
-void pushArrayBuku(string data) {
-    if (isFull()) {
-        cout << "Data telah penuh" << endl;
+int rightChild(int i) {
+    return ((2 * i) + 2);
+}
+
+void shiftUp(int i) {
+    while (i > 0 && H[parent(i)] < H[i]) {
+        std::swap(H[parent(i)], H[i]);
+        i = parent(i);
+    }
+
+}
+
+void shiftDown(int i) {
+    int maxIndex = i;
+    int l = leftChild(i);
+    if (l <= heapSize && H[l] > H[maxIndex]) {
+        maxIndex = l;
+    }
+    
+    int r = rightChild(i);
+    if (r <= heapSize && H[r] > H[maxIndex]) {
+        maxIndex = r;
+    }
+    if (i != maxIndex) {
+        std::swap(H[i], H[maxIndex]);
+        shiftDown(maxIndex);
+    }
+}
+
+void insert(int p) {
+    heapSize = heapSize + 1;
+    H[heapSize] = p;
+    shiftUp(heapSize);
+}
+
+int extractMax() {
+    int result = H[0];
+    H[0] = H[heapSize];
+    heapSize = heapSize - 1;
+    shiftDown(0);
+    return result;
+}
+
+void changePriority(int i, int p) {
+    int oldp = H[i];
+    H[i] = p;
+    if (p > oldp) {
+        shiftUp(i);
     } else {
-        arrayBuku[top] = data;
-        top++;
+        shiftDown(i);
     }
 }
 
-void popArrayBuku() {
-    if (isEmpty()) {
-        cout << "Tidak ada data yang dihapus" << endl;
-    } else {
-        arrayBuku[top - 1] = "";
-        top--;
-    }
+int getMax() {
+    return H[0];
 }
 
-void peekArrayBuku(int posisi) {
-    if (isEmpty()) {
-        cout << "Tidak ada data yang bisa dilihat" << endl;
-    } else {
-        int index = top;
-        for (int i = 1; i <= posisi; i++) {
-            index--;
-        }
-        cout << "Posisi ke " << posisi << " adalah " << arrayBuku[index] << endl;
-    }
-}
-
-int countStack() {
-    return top;
-}
-
-void changeArrayBuku(int posisi, string data) {
-    if (posisi > top) {
-        cout << "Posisi melebihi data yang ada" << endl;
-    } else {
-        int index = top;
-        for (int i = 1; i <= posisi; i++) {
-            index--;
-        }
-        arrayBuku[index] = data;
-    }
-}
-
-void destroyArraybuku() {
-    for (int i = top; i >= 0; i--) {
-        arrayBuku[i] = "";
-    }
-    top = 0;
-}
-
-void cetakArrayBuku() {
-    if (isEmpty()) {
-        cout << "Tidak ada data yang dicetak" << endl;
-    } else {
-        for (int i = top - 1; i >= 0; i--) {
-            cout << arrayBuku[i] << endl;
-        }
-    }
+void remove(int i) {
+    H[i] = getMax() + 1;
+    shiftUp(i);
+    extractMax();
 }
 
 int main() {
-    pushArrayBuku("Kalkulus");
-    pushArrayBuku("Struktur Data");
-    pushArrayBuku("Matematika Diskrit");
-    pushArrayBuku("Dasar Multimedia");
-    pushArrayBuku("Inggris");
+    insert(45);
+    insert(20);
+    insert(14);
+    insert(12);
+    insert(31);
+    insert(7);
+    insert(11);
+    insert(13);
+    insert(7);
+    
+    std::cout << "Priority Queue : ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
+    
+    std::cout << "Node with maximum priority : " << extractMax()
+<< "\n";
 
-    cetakArrayBuku();
-    cout << "\n";
-    cout << "Apakah data stack penuh? " << isFull() << endl;
-    cout << "Apakah data stack kosong? " << isEmpty() << endl;
-    peekArrayBuku(2);
-    popArrayBuku();
-    cout << "Banyaknya data = " << countStack() << endl;
-    changeArrayBuku(2, "Bahasa Jerman");
-    cout << endl;
-    cetakArrayBuku();
-    cout << "\n";
-    destroyArraybuku();
-    cout << "Jumlah data setelah dihapus: " << top << endl;
-    cetakArrayBuku();
+    std::cout << "Priority queue after extracting maximum : ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
 
+    changePriority(2, 49);
+    std::cout << "Priority queue after priority change : ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
+
+remove(3);
+std::cout << "Priority queue after removing the element : ";
+for (int i = 0; i <= heapSize; ++i) {
+    std::cout << H[i] << " ";
+    }
     return 0;
-}
+}   
 ```
 
 ## hasil output
 ```
-l 7\output> & .\'guided1.exe'
-Inggris
-Dasar Multimedia
-Matematika Diskrit
-Struktur Data
-Kalkulus
-
-Apakah data stack penuh? 1
-Apakah data stack kosong? 0        
-Posisi ke 2 adalah Dasar Multimedia
-Banyaknya data = 4
-
-Dasar Multimedia
-Bahasa Jerman
-Struktur Data
-Kalkulus
-
-Jumlah data setelah dihapus: 0     
-Tidak ada data yang dicetak        
-PS D:\Struktur-Data-Assignment\Modul 7\output>
-```
-
-### 2. 
-```
-#include <iostream>
-using namespace std;
-
-const int maksimalQueue = 5; // Maksimal antrian
-int front = 0; // Penanda depan antrian
-int back = 0; // Penanda belakang antrian
-string queueTeller[5]; // Array untuk menyimpan antrian
-
-bool isFull() { // Pengecekan antrian penuh atau tidak
-    if (back == maksimalQueue) {
-        return true; // =1
-    } else {
-        return false;
-    }
-}
-
-bool isEmpty() { // Antrian kosong atau tidak
-    if (back == 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-void enqueueAntrian(string data) { // Menambahkan antrian
-    if (isFull()) {
-        cout << "Antrian penuh" << endl;
-    } else {
-        if (isEmpty()) { // Jika antrian kosong
-            queueTeller[0] = data;
-            front++;
-            back++;
-        } else { // Jika antrian ada isi
-            queueTeller[back] = data;
-            back++;
-        }
-    }
-}
-
-void dequeueAntrian() { // Mengurangi antrian
-    if (isEmpty()) {
-        cout << "Antrian kosong" << endl;
-    } else {
-        for (int i = 0; i < back; i++) {
-            queueTeller[i] = queueTeller[i + 1];
-        }
-        back--;
-    }
-}
-
-int countQueue() { // Menghitung jumlah antrian
-    return back;
-}
-
-void clearQueue() { // Menghapus semua antrian
-    if (isEmpty()) {
-        cout << "Antrian kosong" << endl;
-    } else {
-        for (int i = 0; i < back; i++) {
-            queueTeller[i] = "";
-        }
-        back = 0;
-        front = 0;
-    }
-}
-
-void viewQueue() { // Melihat isi antrian
-    cout << "Data antrian teller:" << endl;
-    for (int i = 0; i < maksimalQueue; i++) {
-        if (queueTeller[i] != "") {
-            cout << i + 1 << ". " << queueTeller[i] << endl;
-        } else {
-            cout << i + 1 << ". (kosong)" << endl;
-        }
-    }
-}
-
-int main() {
-    enqueueAntrian("Andi");
-    enqueueAntrian("Maya");
-    viewQueue();
-    cout << "Jumlah antrian = " << countQueue() << endl;
-    dequeueAntrian();
-    viewQueue();
-    cout << "Jumlah antrian = " << countQueue() << endl;
-    clearQueue();
-    viewQueue();
-    cout << "Jumlah antrian = " << countQueue() << endl;
-    return 0;
-}
-```
-## hasil output
-```
-7\output> & .\'guided2.exe'
-Data antrian teller:
-1. Andi
-2. Maya
-3. (kosong)
-4. (kosong)
-5. (kosong)
-Jumlah antrian = 2
-Data antrian teller:
-1. Maya
-2. (kosong)
-3. (kosong)
-4. (kosong)
-5. (kosong)
-Jumlah antrian = 1
-Data antrian teller:
-1. (kosong)
-2. (kosong)
-3. (kosong)
-4. (kosong)
-5. (kosong)
-Jumlah antrian = 0
-PS D:\Struktur-Data-Assignment\Modul 7\output>
+PS D:\Struktur-Data-Assignment\Modul 8> cd 'd:\Struktur-Data-Assignment\Modul 8\output'
+PS D:\Struktur-Data-Assignment\Modul 8\output> & .\'guided1.exe'
+Priority Queue : 45 31 14 13 20 7 11 12 7 
+Node with maximum priority : 45
+Priority queue after extracting maximum : 31 20 14 13 7 7 11 12 
+Priority queue after priority change : 49 20 31 13 7 7 11 12 
+Priority queue after removing the element : 49 20 31 12 7 7 11 
+PS D:\Struktur-Data-Assignment\Modul 8\output>
 ```
 
 ## Unguided
 
-### 1. Buatlah program untuk menentukan apakah kalimat tersebut yang diinputkan dalam program stack adalah palindrom/tidak. Palindrom kalimat yang dibaca dari depan dan belakang sama. Jelaskan bagaimana cara kerja programnya. contoh kalimat: ini. Kalimat tersebut adalah polindrom, Kalimat: telkom. Kalimat tersebut bukan polindrom. Masukkan kalimat: ini. Kalimat tersebut adalah polindrom. 
-```C++
+### 1. Modifikasi guided diatas yang mana heap dikonstruksi secara manual berdasarkan user
+```
 #include <iostream>
-#include <string>
-#include <stack>
+#include <algorithm>
 
-bool isPalindrom(std::string word) {
-    std::stack<char> s;
-    std::string reversedWord = "";
+int H[50];
+int heapSize = -1;
 
-    // Push all characters of the word to the stack
-    for (char c : word) {
-        s.push(c);
-    }
+int parent(int i) {
+    return (i - 1) / 2;
+}
 
-    // Pop all characters from the stack and construct the reversed word
-    while (!s.empty()) {
-        reversedWord += s.top();
-        s.pop();
-    }
+int leftChild(int i) {
+    return ((2 * i) + 1);
+}
 
-    // Check if the word and the reversed word are the same
-    if (word == reversedWord) {
-        return true;
-    } else {
-        return false;
+int rightChild(int i) {
+    return ((2 * i) + 2);
+}
+
+void shiftUp(int i) {
+    while (i > 0 && H[parent(i)] < H[i]) {
+        std::swap(H[parent(i)], H[i]);
+        i = parent(i);
     }
 }
 
-int main() {
-    std::string input;
-    std::cout << "Masukkan kalimat: ";
-    std::getline(std::cin, input);
-
-    if (isPalindrom(input)) {
-        std::cout << "Kalimat tersebut adalah palindrom." << std::endl;
-    } else {
-        std::cout << "Kalimat tersebut bukan palindrom." << std::endl;
+void shiftDown(int i) {
+    int maxIndex = i;
+    int l = leftChild(i);
+    if (l <= heapSize && H[l] > H[maxIndex]) {
+        maxIndex = l;
     }
+    
+    int r = rightChild(i);
+    if (r <= heapSize && H[r] > H[maxIndex]) {
+        maxIndex = r;
+    }
+    if (i != maxIndex) {
+        std::swap(H[i], H[maxIndex]);
+        shiftDown(maxIndex);
+    }
+}
 
+void insert(int p) {
+    heapSize = heapSize + 1;
+    H[heapSize] = p;
+    shiftUp(heapSize);
+}
+
+int extractMax() {
+    int result = H[0];
+    H[0] = H[heapSize];
+    heapSize = heapSize - 1;
+    shiftDown(0);
+    return result;
+}
+
+void changePriority(int i, int p) {
+    int oldp = H[i];
+    H[i] = p;
+    if (p > oldp) {
+        shiftUp(i);
+    } else {
+        shiftDown(i);
+    }
+}
+
+int getMax() {
+    return H[0];
+}
+
+void remove(int i) {
+    H[i] = getMax() + 1;
+    shiftUp(i);
+    extractMax();
+}
+
+int main() {
+    int n;
+    std::cout << "Masukkan jumlah elemen: ";
+    std::cin >> n;
+    for (int i = 0; i < n; ++i) {
+        int x;
+        std::cout << "Masukkan elemen ke-" << (i+1) << ": ";
+        std::cin >> x;
+        insert(x);
+    }
+    
+    std::cout << "Priority Queue : ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
+    
+    std::cout << "Node with maximum priority : " << extractMax() << "\n";
+
+    std::cout << "Priority queue after extracting maximum : ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
+
+    int idx, p;
+    std::cout << "Masukkan indeks dan prioritas baru: ";
+    std::cin >> idx >> p;
+    changePriority(idx, p);
+    std::cout << "Priority queue after priority change : ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
+    std::cout << "\n";
+
+    std::cout << "Masukkan indeks elemen yang akan dihapus: ";
+    std::cin >> idx;
+    remove(idx);
+    std::cout << "Priority queue after removing the element : ";
+    for (int i = 0; i <= heapSize; ++i) {
+        std::cout << H[i] << " ";
+    }
     return 0;
 }
 ```
 
 ## hasil output
 ```
-7\output> & .\'unguided1.exe'
-Masukkan kalimat: ini 
-Kalimat tersebut adalah palindrom.
-PS D:\Struktur-Data-Assignment\Modul 7\output> 
+PS D:\Struktur-Data-Assignment\Modul 8> cd "d:\Struktur-Data-Assignment\Modul 8\" ; if ($?) { g++ unguided1.cpp -o guided1 } ; if ($?) { .\unguided1 }
+Masukkan jumlah elemen: 5
+Masukkan elemen ke-1: 1
+Masukkan elemen ke-2: 2
+Masukkan elemen ke-3: 3
+Masukkan elemen ke-4: 4
+Masukkan elemen ke-5: 5
+Priority Queue : 5 4 2 1 3 
+Node with maximum priority : 5
+Priority queue after extracting maximum : 4 3 2 1 
+Masukkan indeks dan prioritas baru:
 ```
 
-### 2. Ubah guided queue diatas agar menjadi program inputan user dan program menu.
 
-```
-#include <iostream>
-#include <string>
-#include <stack>
-
-bool isPalindrom(std::string kalimat) {
-    std::stack<char> stack;
-    std::string kalimatTerbalik = "";
-
-    // Push all characters of the word to the stack
-    for (char c : kalimat) {
-        stack.push(c);
-    }
-
-    // Pop all characters from the stack and construct the reversed word
-    while (!stack.empty()) {
-        kalimatTerbalik += stack.top();
-        stack.pop();
-    }
-
-    // Check if the word and the reversed word are the same
-    if (kalimat == kalimatTerbalik) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-int main() {
-    int pilihan;
-    std::string kalimat;
-
-    while (true) {
-        std::cout << "Pilih menu:\n";
-        std::cout << "1. Cek apakah kalimat adalah palindrom\n";
-        std::cout << "2. Keluar\n";
-        std::cout << "Pilihan: ";
-        std::cin >> pilihan;
-
-        if (pilihan == 1) {
-            std::cout << "Masukkan kalimat: ";
-            std::cin.ignore();
-            std::getline(std::cin, kalimat);
-
-            if (isPalindrom(kalimat)) {
-                std::cout << "Kalimat ini adalah palindrom.\n";
-            } else {
-                std::cout << "Kalimat ini bukan palindrom.\n";
-            }
-        } else if (pilihan == 2) {
-            break;
-        } else {
-            std::cout << "Pilihan tidak valid. Silakan coba lagi.\n";
-        }
-    }
-
-    return 0;
-}
-```
-
-## hasil output
-```
- 7\output> & .\'unguided2.exe'
-Pilih menu:
-1. Cek apakah kalimat adalah palindrom
-2. Keluar
-Pilihan: 1
-Masukkan kalimat: ini
-Kalimat ini adalah palindrom.
-Pilih menu:
-1. Cek apakah kalimat adalah palindrom
-2. Keluar
-Pilihan:
-```
