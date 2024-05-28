@@ -20,6 +20,8 @@ a. Rekursi langsung
 Dalam rekursi langsung, fungsi memanggil dirinya sendiri secara langsung.
 b. Rekursi tidak langsung
 Jika sebuah fungsi memanggil dirinya sendiri secara tidak langsung dari fungsi lain.
+
+
 Kelebihan :
 1. Kode rekursif menyajikan solusi yang
 mudah dimengerti dan bersih, meningkatkan kejelasan.
@@ -98,14 +100,17 @@ item data menjadi lambat, karena harus mencari di seluruh linked list.
 Namun, chaining dapat mengatasi jumlah item data yang besar dengan
 efektif, karena keterbatasan array dihindari.
 2. Closed Hashing
+   
 ● Linear Probing
 Pada saat terjadi collision, maka akan mencari posisi yang kosong di
 bawah tempat terjadinya collision, jika masih penuh terus ke bawah,
 hingga ketemu tempat yang kosong. Jika tidak ada tempat yang kosong
 berarti HashTable sudah penuh.
+
 ● Quadratic Probing
 Penanganannya hampir sama dengan metode linear, hanya
 lompatannya tidak satu-satu, tetapi quadratic ( 12, 22, 32, 42, ... )
+
 ● Double Hashing
 Pada saat terjadi collision, terdapat fungsi hash yang kedua untuk
 menentukan posisinya kembali.
