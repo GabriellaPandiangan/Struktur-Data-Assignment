@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul Tipe Data</h1>
+# <h1 align="center">Laporan Praktikum Modul Rekursif Dan Has Table</h1>
 <p align="center">Gabriella F Pandiangan</p>
 
 ## Features
@@ -8,442 +8,493 @@
 
 
 ## Dasar Teori
-STACK
-Stack adalah struktur data sederhana yang digunakan untuk menyimpan data (mirip
-dengan Linked Lists). Dalam tumpukan, urutan kedatangan data penting. Sebuah
-tumpukan piring di kafetaria adalah contoh bagus dari tumpukan. Piring
-ditambahkan ke tumpukan saat mereka dibersihkan dan ditempatkan di bagian
-atas. Ketika sebuah piring dibutuhkan, diambil dari bagian atas tumpukan. Piring
-pertama yang ditempatkan di tumpukan adalah yang terakhir digunakan.
-Definisi: Sebuah tumpukan adalah daftar terurut di mana penyisipan dan
-penghapusan dilakukan di satu ujung, disebut atas. Elemen terakhir yang
-dimasukkan adalah yang pertama dihapus. Oleh karena itu, disebut daftar Last in
-First out (LIFO).
-Operasi pada stack melibatkan beberapa fungsi dasar yang dapat dilakukan pada
-struktur data ini. Berikut adalah beberapa operasi umum pada stack:
-a. Push (Masukkan): Menambahkan elemen ke dalam tumpukan pada posisi paling
-atas atau ujung.
-b. Pop (Keluarkan): Menghapus elemen dari posisi paling atas atau ujung tumpukan.
-c. Top (Atas): Mendapatkan nilai atau melihat elemen teratas pada tumpukan tanpa
-menghapusnya.
-d. IsEmpty (Kosong): Memeriksa apakah tumpukan kosong atau tidak.
-e. IsFull (Penuh): Memeriksa apakah tumpukan penuh atau tidak (terutama pada
-implementasi tumpukan dengan kapasitas terbatas).
-f. Size (Ukuran): Mengembalikan jumlah elemen yang ada dalam tumpukan.
-g. Peek (Lihat): Melihat nilai atau elemen pada posisi tertentu dalam tumpukan
-tanpa menghapusnya.
-h. Clear (Hapus Semua): Mengosongkan atau menghapus semua elemen dari
-tumpukan.
-i. Search (Cari): Mencari keberadaan elemen tertentu dalam tumpukan.
+Konsep Rekursif
+Rekursif merupakan salah satu proses pengulangan fungsi atau prosedur yang
+memanggil dirinya sendiri. Dalam sebuah fungsi rekursif pemanggilan dapat terjadi berulang kali. Karena ada proses yang berulang-ulang maka harus ada suatu kondisi yang mengakhiri prosesnya. Jika tidak, maka proses tidak akan pernah berhenti sampai memori yang digunakan tidak dapat menampung lagi.
 
 
-QUEUE
-Queue adalah struktur data yang digunakan untuk menyimpan data dengan metode
-FIFO (First-In First-Out). Data yang pertama dimasukkan ke dalam queue akan
-menjadi data yang pertama pula untuk dikeluarkan dari queue. Queue mirip dengan
-konsep antrian pada kehidupan sehari-hari, dimana konsumen yang datang lebih
-dulu akan dilayani terlebih dahulu.
-Implementasi queue dapat dilakukan dengan menggunakan array atau linked list.
-Struktur data queue terdiri dari dua pointer yaitu front dan rear. Front/head adalah
-pointer ke elemen pertama dalam queue dan rear/tail/back adalah pointer ke elemen
-terakhir dalam queue.
+Kode rekursif cenderung lebih singkat dan lebih mudah dibuat dibandingkan dengan kode iteratif. Biasanya, perulangan dapat diubah menjadi fungsi rekursif saat proses kompilasi atau interpretasi. Rekursi sangat efektif untuk menangani tugas yang dapat diuraikan menjadi sub tugas yang serupa. Sebagai contoh, masalah pengurutan, pencarian, dan penjelajahan sering kali dapat diselesaikan dengan solusi rekursif yang sederhana.
+Jenis-jenis Rekursi
+Terdapat dua jenis fungsi rekursi yaitu:
+a. Rekursi langsung
+Dalam rekursi langsung, fungsi memanggil dirinya sendiri secara langsung.
+b. Rekursi tidak langsung
+Jika sebuah fungsi memanggil dirinya sendiri secara tidak langsung dari fungsi lain.
+Kelebihan :
+1. Kode rekursif menyajikan solusi yang
+mudah dimengerti dan bersih, meningkatkan kejelasan.
+2. Rekursi terbukti efektif untuk
+menangani masalah yang dapat diuraikan menjadi sub tugas-serupa,
+seperti penjelajahan struktur data pohon.
+3. Dalam beberapa kasus, solusi rekursif dapat memberikan kode yang lebih
+elegan dan lebih kompak dibandingkan dengan pendekatan iteratif.
 
-Perbedaan antara stack dan queue terdapat pada aturan penambahan dan
-penghapusan elemen. Pada stack, operasi penambahan dan penghapusan elemen
-dilakukan di satu ujung. Elemen yang terakhir diinputkan akan berada paling dengan
-dengan ujung atau dianggap paling atas sehingga pada operasi penghapusan, elemen
-teratas tersebut akan dihapus paling awal, sifat demikian dikenal dengan LIFO.
-Pada Queue, operasi tersebut dilakukan ditempat berbeda (melalui salah satu ujung)
-karena perubahan data selalu mengacu pada Head, maka hanya ada 1 jenis insert
-maupun delete. Prosedur ini sering disebut Enqueue dan Dequeue pada kasus Queue.
-Untuk Enqueue, cukup tambahkan elemen setelah elemen terakhir Queue, dan untuk
-Dequeue, cukup "geser"kan Head menjadi elemen selanjutnya.
-Operasi pada Queue
-1. enqueue() : menambahkan data ke dalam queue.
-2. dequeue() : mengeluarkan data dari queue.
-3. peek() : mengambil data dari queue tanpa menghapusnya.
-4. isEmpty() : mengecek apakah queue kosong atau tidak.
-5. isFull() : mengecek apakah queue penuh atau tidak.
-6. size() : menghitung jumlah elemen dalam queue.
+Kekurangan:
+1. Efisiensi ruang menjadi masalah utama
+dalam rekursi karena setiap panggilan
+rekursif menambah overhead pada call
+stack.
+2. Beberapa implementasi rekursif
+mungkin kurang efisien secara waktu,
+terutama ketika terdapat overhead
+pemanggilan fungsi.
+3. Kesulitan dalam pemahaman konsep
+rekursi oleh beberapa programmer
+dapat memunculkan potensi bug dan
+kompleksitas pemecahan masalah.
+
+a. Pengertian Hash Table
+Hash Table adalah struktur data yang mengorganisir data ke dalam pasangan
+kunci-nilai. Hash table biasanya terdiri dari dua komponen utama: array (atau vektor) dan fungsi hash. Hashing adalah teknik untuk mengubah rentang nilai kunci menjadi rentang indeks array.
+Array menyimpan data dalam slot-slot yang disebut bucket. Setiap bucket
+dapat menampung satu atau beberapa item data. Fungsi hash digunakan untuk
+menghasilkan nilai unik dari setiap item data, yang digunakan sebagai indeks
+array. Dengan cara ini, hash table memungkinkan pencarian data dalam waktu
+yang konstan (O(1)) dalam kasus terbaik.
+Sistem hash table bekerja dengan cara mengambil input kunci dan
+memetakkannya ke nilai indeks array menggunakan fungsi hash. Kemudian, data
+disimpan pada posisi indeks array yang dihasilkan oleh fungsi hash. Ketika data perlu dicari, input kunci dijadikan sebagai parameter untuk fungsi hash, dan posisi indeks array yang dihasilkan digunakan untuk mencari data. Dalam kasus hash collision, di mana dua atau lebih data memiliki nilai hash yang sama, hash table menyimpan data tersebut dalam slot yang sama dengan Teknik yang disebut chaining.
+
+b. Fungsi Hash Table
+Fungsi hash membuat pemetaan antara kunci dan nilai, hal ini dilakukan
+melalui penggunaan rumus matematika yang dikenal sebagai fungsi hash. Hasil
+dari fungsi hash disebut sebagai nilai hash atau hash. Nilai hash adalah
+representasi dari string karakter asli tetapi biasanya lebih kecil dari aslinya.
+
+
+c. Operasi Hash Table
+1. Insertion:
+Memasukkan data baru ke dalam hash table dengan memanggil fungsi hash
+untuk menentukan posisi bucket yang tepat, dan kemudian menambahkan
+data ke bucket tersebut.
+2. Deletion:
+Menghapus data dari hash table dengan mencari data menggunakan fungsi
+hash, dan kemudian menghapusnya dari bucket yang sesuai.
+3. Searching:
+Mencari data dalam hash table dengan memasukkan input kunci ke fungsi
+hash untuk menentukan posisi bucket, dan kemudian mencari data di dalam
+bucket yang sesuai.
+4. Update:
+Memperbarui data dalam hash table dengan mencari data menggunakan
+fungsi hash, dan kemudian memperbarui data yang ditemukan.
+5. Traversal:
+Melalui seluruh hash table untuk memproses semua data yang ada dalam
+tabel.
+
+
+d. Collision Resolution
+Keterbatasan tabel hash adalah jika dua angka dimasukkan ke dalam fungsi
+hash menghasilkan nilai yang sama. Hal ini disebut dengan collision. Ada dua
+teknik untuk menyelesaikan masalah ini diantaranya :
+
+1. Open Hashing (Chaining)
+Metode chaining mengatasi collision dengan cara menyimpan semua
+item data dengan nilai indeks yang sama ke dalam sebuah linked list. Setiap
+node pada linked list merepresentasikan satu item data. Ketika ada pencarian
+atau penambahan item data, pencarian atau penambahan dilakukan pada
+linked list yang sesuai dengan indeks yang telah dihitung dari kunci yang di
+hash. Ketika linked list memiliki banyak node, pencarian atau penambahan
+item data menjadi lambat, karena harus mencari di seluruh linked list.
+Namun, chaining dapat mengatasi jumlah item data yang besar dengan
+efektif, karena keterbatasan array dihindari.
+2. Closed Hashing
+● Linear Probing
+Pada saat terjadi collision, maka akan mencari posisi yang kosong di
+bawah tempat terjadinya collision, jika masih penuh terus ke bawah,
+hingga ketemu tempat yang kosong. Jika tidak ada tempat yang kosong
+berarti HashTable sudah penuh.
+● Quadratic Probing
+Penanganannya hampir sama dengan metode linear, hanya
+lompatannya tidak satu-satu, tetapi quadratic ( 12, 22, 32, 42, ... )
+● Double Hashing
+Pada saat terjadi collision, terdapat fungsi hash yang kedua untuk
+menentukan posisinya kembali.
 
 ## Guided 
 
-### 1. Sourcecode
+### 1. Rekurisif Langsung (Direct Recurision)
 ```
 #include <iostream>
 using namespace std;
 
-string arrayBuku[5];
-int maksimal = 5, top = 0;
+//Code ini berfungsi untuk melakukan hitung mundur
+//dari angka yang diinputkan
 
-bool isFull() {
-    return (top == maksimal);
-}
-
-bool isEmpty() {
-    return (top == 0);
-}
-
-void pushArrayBuku(string data) {
-    if (isFull()) {
-        cout << "Data telah penuh" << endl;
-    } else {
-        arrayBuku[top] = data;
-        top++;
-    }
-}
-
-void popArrayBuku() {
-    if (isEmpty()) {
-        cout << "Tidak ada data yang dihapus" << endl;
-    } else {
-        arrayBuku[top - 1] = "";
-        top--;
-    }
-}
-
-void peekArrayBuku(int posisi) {
-    if (isEmpty()) {
-        cout << "Tidak ada data yang bisa dilihat" << endl;
-    } else {
-        int index = top;
-        for (int i = 1; i <= posisi; i++) {
-            index--;
-        }
-        cout << "Posisi ke " << posisi << " adalah " << arrayBuku[index] << endl;
-    }
-}
-
-int countStack() {
-    return top;
-}
-
-void changeArrayBuku(int posisi, string data) {
-    if (posisi > top) {
-        cout << "Posisi melebihi data yang ada" << endl;
-    } else {
-        int index = top;
-        for (int i = 1; i <= posisi; i++) {
-            index--;
-        }
-        arrayBuku[index] = data;
-    }
-}
-
-void destroyArraybuku() {
-    for (int i = top; i >= 0; i--) {
-        arrayBuku[i] = "";
-    }
-    top = 0;
-}
-
-void cetakArrayBuku() {
-    if (isEmpty()) {
-        cout << "Tidak ada data yang dicetak" << endl;
-    } else {
-        for (int i = top - 1; i >= 0; i--) {
-            cout << arrayBuku[i] << endl;
-        }
-    }
+void countdown(int n)
+{
+ if (n == 0) {
+  cout << "Blastoff!" << endl; // Base case: print "Blastoff!" when n is 0
+  return;
+ }
+ cout << n << " "; // Recursive case: print n and decrement n
+ countdown(n - 1);
 }
 
 int main() {
-    pushArrayBuku("Kalkulus");
-    pushArrayBuku("Struktur Data");
-    pushArrayBuku("Matematika Diskrit");
-    pushArrayBuku("Dasar Multimedia");
-    pushArrayBuku("Inggris");
-
-    cetakArrayBuku();
-    cout << "\n";
-    cout << "Apakah data stack penuh? " << isFull() << endl;
-    cout << "Apakah data stack kosong? " << isEmpty() << endl;
-    peekArrayBuku(2);
-    popArrayBuku();
-    cout << "Banyaknya data = " << countStack() << endl;
-    changeArrayBuku(2, "Bahasa Jerman");
-    cout << endl;
-    cetakArrayBuku();
-    cout << "\n";
-    destroyArraybuku();
-    cout << "Jumlah data setelah dihapus: " << top << endl;
-    cetakArrayBuku();
-
-    return 0;
-}
+ cout << "Rekursif Langsung: ";
+ countdown(5); // 5 merupakan input nya
+ cout << endl;
+ return 0;
+} 
 ```
 
 ## hasil output
 ```
-l 7\output> & .\'guided1.exe'
-Inggris
-Dasar Multimedia
-Matematika Diskrit
-Struktur Data
-Kalkulus
-
-Apakah data stack penuh? 1
-Apakah data stack kosong? 0        
-Posisi ke 2 adalah Dasar Multimedia
-Banyaknya data = 4
-
-Dasar Multimedia
-Bahasa Jerman
-Struktur Data
-Kalkulus
-
-Jumlah data setelah dihapus: 0     
-Tidak ada data yang dicetak        
-PS D:\Struktur-Data-Assignment\Modul 7\output>
+PS D:\Struktur-Data-Assignment\Modul 9\output> & .\'guided1.exe'
+Rekursif Langsung: 5 4 3 2 1 
 ```
-
-### 2. 
+### 2. Rekursif Tidak Langsung
 ```
 #include <iostream>
 using namespace std;
 
-const int maksimalQueue = 5; // Maksimal antrian
-int front = 0; // Penanda depan antrian
-int back = 0; // Penanda belakang antrian
-string queueTeller[5]; // Array untuk menyimpan antrian
+void functionB(int n);
 
-bool isFull() { // Pengecekan antrian penuh atau tidak
-    if (back == maksimalQueue) {
-        return true; // =1
-    } else {
-        return false;
+void functionA(int n) {
+    if (n > 0) {
+        cout << n << " ";
+        functionB(n - 1); // Panggilan rekursif tidak langsung
+    }
+} 
+void functionB(int n) {
+    if (n > 0) {
+        cout << n << " ";
+        functionA(n / 2); // Panggilan rekursif tidak langsung
     }
 }
+int main() {
+    int num = 5;
+    cout << "Rekursif Tidak Langsung: ";
+    functionA(num);
+    return 0;
+} 
+```
+## hasil output
+```
+PS D:\Struktur-Data-Assignment\Modul 9\output> & .\'guided2.exe'
+Rekursif Tidak Langsung: 5 4 2 1 
+```
 
-bool isEmpty() { // Antrian kosong atau tidak
-    if (back == 0) {
-        return true;
-    } else {
-        return false;
+### 3. Hash Table
+```
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+const int TABLE_SIZE = 11;
+
+string name;
+string phone_number;
+class HashNode {
+public:
+    string name;
+    string phone_number;
+
+    HashNode(string name, string phone_number) {
+        this->name = name;
+        this->phone_number = phone_number;
     }
-}
+};
 
-void enqueueAntrian(string data) { // Menambahkan antrian
-    if (isFull()) {
-        cout << "Antrian penuh" << endl;
-    } else {
-        if (isEmpty()) { // Jika antrian kosong
-            queueTeller[0] = data;
-            front++;
-            back++;
-        } else { // Jika antrian ada isi
-            queueTeller[back] = data;
-            back++;
+class HashMap {
+private:
+    vector<HashNode*> table[TABLE_SIZE];
+public:
+    int hashFunc(string key) {
+         int hash_val = 0;
+         for (char c : key) {
+            hash_val += c;
+        }
+    return hash_val % TABLE_SIZE; // 4 bisa aja 204,12004, 6 bisa aja
+266, 300;
+    }
+    void insert(string name, string phone_number) {
+        int hash_val = hashFunc(name);
+
+        for (auto node : table[hash_val]) {
+            if (node->name == name) {
+                node->phone_number = phone_number;
+                return;
+            }
+        }
+        table[hash_val].push_back(new HashNode(name, phone_number));
+    }
+
+    void remove(string name) {
+    int hash_val = hashFunc(name);
+
+        for (auto it = table[hash_val].begin(); it !=
+table[hash_val].end(); it++) {
+            if ((*it)->name == name) {
+                 table[hash_val].erase(it);
+                 return;
+            }
         }
     }
-}
-
-void dequeueAntrian() { // Mengurangi antrian
-    if (isEmpty()) {
-        cout << "Antrian kosong" << endl;
-    } else {
-        for (int i = 0; i < back; i++) {
-            queueTeller[i] = queueTeller[i + 1];
-        }
-        back--;
+string searchByName(string name) {
+int hash_val = hashFunc(name);
+for (auto node : table[hash_val]) {
+    if (node->name == name) {
+        return node->phone_number;
     }
 }
-
-int countQueue() { // Menghitung jumlah antrian
-    return back;
+return "";
 }
-
-void clearQueue() { // Menghapus semua antrian
-    if (isEmpty()) {
-        cout << "Antrian kosong" << endl;
-    } else {
-        for (int i = 0; i < back; i++) {
-            queueTeller[i] = "";
-        }
-        back = 0;
-        front = 0;
-    }
-}
-
-void viewQueue() { // Melihat isi antrian
-    cout << "Data antrian teller:" << endl;
-    for (int i = 0; i < maksimalQueue; i++) {
-        if (queueTeller[i] != "") {
-            cout << i + 1 << ". " << queueTeller[i] << endl;
-        } else {
-            cout << i + 1 << ". (kosong)" << endl;
+void print() {
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        cout << i << ": ";
+            for (auto pair : table[i]) {
+            if(pair != nullptr){
+                cout << "[" << pair->name << ", " <<
+pair->phone_number << "]";
+                }           
+            }
+            cout << endl;
         }
     }
-}
+};
 
 int main() {
-    enqueueAntrian("Andi");
-    enqueueAntrian("Maya");
-    viewQueue();
-    cout << "Jumlah antrian = " << countQueue() << endl;
-    dequeueAntrian();
-    viewQueue();
-    cout << "Jumlah antrian = " << countQueue() << endl;
-    clearQueue();
-    viewQueue();
-    cout << "Jumlah antrian = " << countQueue() << endl;
-    return 0;
+HashMap employee_map;
+
+employee_map.insert("Mistah", "1234");
+employee_map.insert("Pastah", "5678");
+employee_map.insert("Ghana", "91011");
+
+cout << "Nomer Hp Mistah : " <<employee_map.searchByName("Mistah") <<
+endl;
+cout << "Phone Hp Pastah : " <<employee_map.searchByName("Pastah") <<
+endl;
+cout << "Phone Hp Ghana : " <<employee_map.searchByName("Ghana") <<
+endl;
+
+employee_map.remove("Mistah");
+
+cout << "Nomer Hp Mistah setelah dihapus : "
+<<employee_map.searchByName("Mistah") << endl << endl;\
+
+cout << "Hash Table : " << endl;
+employee_map.print();
+
+return 0;
 }
 ```
 ## hasil output
 ```
-7\output> & .\'guided2.exe'
-Data antrian teller:
-1. Andi
-2. Maya
-3. (kosong)
-4. (kosong)
-5. (kosong)
-Jumlah antrian = 2
-Data antrian teller:
-1. Maya
-2. (kosong)
-3. (kosong)
-4. (kosong)
-5. (kosong)
-Jumlah antrian = 1
-Data antrian teller:
-1. (kosong)
-2. (kosong)
-3. (kosong)
-4. (kosong)
-5. (kosong)
-Jumlah antrian = 0
-PS D:\Struktur-Data-Assignment\Modul 7\output>
+PS D:\Struktur-Data-Assignment\Modul 9\output> & .\'guided3.exe'
+Nomer Hp Mistah : 1234
+Phone Hp Pastah : 5678
+Phone Hp Ghana : 91011
+Nomer Hp Mistah setelah dihapus : 
+
+Hash Table : 
+0: 
+1:
+2:
+3:
+4: [Pastah, 5678]
+5:
+6: [Ghana, 91011]
+7:
+8:
+9: 
+10:
 ```
 
 ## Unguided
 
-### 1. Buatlah program untuk menentukan apakah kalimat tersebut yang diinputkan dalam program stack adalah palindrom/tidak. Palindrom kalimat yang dibaca dari depan dan belakang sama. Jelaskan bagaimana cara kerja programnya. contoh kalimat: ini. Kalimat tersebut adalah polindrom, Kalimat: telkom. Kalimat tersebut bukan polindrom. Masukkan kalimat: ini. Kalimat tersebut adalah polindrom. 
-```C++
-#include <iostream>
-#include <string>
-#include <stack>
+### 1. Buatlah sebuah program Rekursif Langsung (Direct Recursion) yang menghitung nilai faktorial dari sebuah inputan bilangan bulat positif! Contoh Output: Masukkan bilangan bulat positif: 5, Faktorial dari 5 adalah: 120
+```
+#include<iostream>
+using namespace std;
 
-bool isPalindrom(std::string word) {
-    std::stack<char> s;
-    std::string reversedWord = "";
-
-    // Push all characters of the word to the stack
-    for (char c : word) {
-        s.push(c);
-    }
-
-    // Pop all characters from the stack and construct the reversed word
-    while (!s.empty()) {
-        reversedWord += s.top();
-        s.pop();
-    }
-
-    // Check if the word and the reversed word are the same
-    if (word == reversedWord) {
-        return true;
-    } else {
-        return false;
-    }
+long long faktorial(int n) {
+    if(n > 1)
+        return n * faktorial(n - 1);
+    else
+        return 1;
 }
 
 int main() {
-    std::string input;
-    std::cout << "Masukkan kalimat: ";
-    std::getline(std::cin, input);
-
-    if (isPalindrom(input)) {
-        std::cout << "Kalimat tersebut adalah palindrom." << std::endl;
-    } else {
-        std::cout << "Kalimat tersebut bukan palindrom." << std::endl;
-    }
-
+    int num;
+    cout << "Masukkan bilangan bulat positif: ";
+    cin >> num;
+    cout << "Faktorial dari " << num << " adalah: " << faktorial(num) << endl;
     return 0;
 }
 ```
 
 ## hasil output
 ```
-7\output> & .\'unguided1.exe'
-Masukkan kalimat: ini 
-Kalimat tersebut adalah palindrom.
-PS D:\Struktur-Data-Assignment\Modul 7\output> 
+PS D:\Struktur-Data-Assignment\Modul 9\output> & .\'unguided1.exe'
+Masukkan bilangan bulat positif: 5
+Faktorial dari 5 adalah: 120
 ```
 
-### 2. Ubah guided queue diatas agar menjadi program inputan user dan program menu.
-
+### 2.Buatlah versi program Rekursif Tidak Langsung (Indirect Recursion) dari soal nomor 1 di atas
 ```
 #include <iostream>
-#include <string>
-#include <stack>
 
-bool isPalindrom(std::string kalimat) {
-    std::stack<char> stack;
-    std::string kalimatTerbalik = "";
-
-    // Push all characters of the word to the stack
-    for (char c : kalimat) {
-        stack.push(c);
-    }
-
-    // Pop all characters from the stack and construct the reversed word
-    while (!stack.empty()) {
-        kalimatTerbalik += stack.top();
-        stack.pop();
-    }
-
-    // Check if the word and the reversed word are the same
-    if (kalimat == kalimatTerbalik) {
-        return true;
+unsigned long long helper(int n, int result) {
+    if (n == 0 || n == 1) {
+        return result;
     } else {
-        return false;
+        return helper(n - 1, n * result);
     }
 }
 
+unsigned long long factorial(int n) {
+    return helper(n, 1);
+}
+
 int main() {
-    int pilihan;
-    std::string kalimat;
+    int num;
+    std::cout << "Masukkan bilangan bulat positif: ";
+    std::cin >> num;
+    std::cout << "Faktorial dari " << num << " adalah: " << factorial(num) << std::endl;
+    return 0;
+}
+```
+## hasil output
+```
+PS D:\Struktur-Data-Assignment\Modul 9\output> & .\'unguided2.exe'
+Masukkan bilangan bulat positif: 5
+Faktorial dari 5 adalah: 120
+```
+### 3
+```
+#include <iostream>
+#include <string>
+#include <vector>
 
-    while (true) {
-        std::cout << "Pilih menu:\n";
-        std::cout << "1. Cek apakah kalimat adalah palindrom\n";
-        std::cout << "2. Keluar\n";
-        std::cout << "Pilihan: ";
-        std::cin >> pilihan;
+using namespace std;
+const int TABLE_SIZE = 11;
 
-        if (pilihan == 1) {
-            std::cout << "Masukkan kalimat: ";
-            std::cin.ignore();
-            std::getline(std::cin, kalimat);
+class HashNode {
+public:
+    string nim;
+    int nilai;
 
-            if (isPalindrom(kalimat)) {
-                std::cout << "Kalimat ini adalah palindrom.\n";
-            } else {
-                std::cout << "Kalimat ini bukan palindrom.\n";
+    HashNode(string nim, int nilai) {
+        this->nim = nim;
+        this->nilai = nilai;
+    }
+};
+
+class HashTable {
+private:
+    vector<HashNode*> table[TABLE_SIZE];
+public:
+    int hashFunc(string key) {
+        int hash_val = 0;
+        for (char c : key) {
+            hash_val += c;
+        }
+        return hash_val % TABLE_SIZE;
+    }
+
+    void insert(string nim, int nilai) {
+        int hash_val = hashFunc(nim);
+
+        for (auto node : table[hash_val]) {
+            if (node->nim == nim) {
+                node->nilai = nilai;
+                return;
             }
-        } else if (pilihan == 2) {
-            break;
-        } else {
-            std::cout << "Pilihan tidak valid. Silakan coba lagi.\n";
+        }
+        table[hash_val].push_back(new HashNode(nim, nilai));
+    }
+
+    void remove(string nim) {
+        int hash_val = hashFunc(nim);
+
+        for (auto it = table[hash_val].begin(); it != table[hash_val].end(); it++) {
+            if ((*it)->nim == nim) {
+                table[hash_val].erase(it);
+                return;
+            }
         }
     }
 
+    int searchByNim(string nim) {
+        int hash_val = hashFunc(nim);
+        for (auto node : table[hash_val]) {
+            if (node->nim == nim) {
+                return node->nilai;
+            }
+        }
+        return -1; // not found
+    }
+
+    void searchByNilai(int nilaiAwal, int nilaiAkhir) {
+        for (int i = 0; i < TABLE_SIZE; i++) {
+            for (auto node : table[i]) {
+                if (node->nilai >= nilaiAwal && node->nilai <= nilaiAkhir) {
+                    cout << "NIM: " << node->nim << ", Nilai: " << node->nilai << endl;
+                }
+            }
+        }
+    }
+
+    void print() {
+        for (int i = 0; i < TABLE_SIZE; i++) {
+            cout << i << ": ";
+            for (auto pair : table[i]) {
+                if (pair != nullptr) {
+                    cout << "[" << pair->nim << ", " << pair->nilai << "]";
+                }
+            }
+            cout << endl;
+        }
+    }
+};
+
+int main() {
+    HashTable student_table;
+
+    student_table.insert("12345", 80);
+    student_table.insert("67890", 90);
+    student_table.insert("11111", 85);
+
+    cout << "Nilai 12345: " << student_table.searchByNim("12345") << endl;
+    cout << "Nilai 67890: " << student_table.searchByNim("67890") << endl;
+    cout << "Nilai 11111: " << student_table.searchByNim("11111") << endl;
+
+    student_table.remove("12345");
+
+    cout << "Nilai 12345 setelah dihapus: " << student_table.searchByNim("12345") << endl << endl;
+
+    cout << "Cari nilai antara 80-90: " << endl;
+    student_table.searchByNilai(80, 90);
+
+    cout << "Hash Table: " << endl;
+    student_table.print();
+
     return 0;
 }
 ```
-
 ## hasil output
 ```
- 7\output> & .\'unguided2.exe'
-Pilih menu:
-1. Cek apakah kalimat adalah palindrom
-2. Keluar
-Pilihan: 1
-Masukkan kalimat: ini
-Kalimat ini adalah palindrom.
-Pilih menu:
-1. Cek apakah kalimat adalah palindrom
-2. Keluar
-Pilihan:
+PS D:\Struktur-Data-Assignment\Modul 9\output> & .\'unguided3.exe'
+Nilai 12345: 80
+Nilai 67890: 90
+Nilai 11111: 85
+Nilai 12345 setelah dihapus: -1
+
+Cari nilai antara 80-90: 
+NIM: 11111, Nilai: 85
+NIM: 67890, Nilai: 90
+Hash Table:
+0:
+1:
+2:
+3: [11111, 85]
+4:
+5:
+6: [67890, 90]
+7:
+8:
+9:
+10:
 ```
