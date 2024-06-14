@@ -320,7 +320,7 @@ PS D:\Struktur-Data-Assignment\Modul 7\output>
 ## Unguided
 
 ### 1. Buatlah program untuk menentukan apakah kalimat tersebut yang diinputkan dalam program stack adalah palindrom/tidak. Palindrom kalimat yang dibaca dari depan dan belakang sama. Jelaskan bagaimana cara kerja programnya. contoh kalimat: ini. Kalimat tersebut adalah polindrom, Kalimat: telkom. Kalimat tersebut bukan polindrom. Masukkan kalimat: ini. Kalimat tersebut adalah polindrom. 
-```C++
+```
 #include <iostream>
 #include <string>
 #include <stack>
@@ -370,9 +370,22 @@ Masukkan kalimat: ini
 Kalimat tersebut adalah palindrom.
 PS D:\Struktur-Data-Assignment\Modul 7\output> 
 ```
+## penjelasan
+program yang bertujuan untuk mengecek apakah sebuah kalimat yang dimasukkan oleh pengguna merupakan palindrom atau tidak. Sebuah palindrom adalah suatu kata, frasa, angka, atau urutan lainnya yang sama jika dibaca dari depan maupun dari belakang.
+
+Di dalam program ini:
+
+Fungsi isPalindrom menerima sebuah string sebagai argumen dan mengembalikan nilai boolean yang menunjukkan apakah string tersebut merupakan palindrom atau tidak.
+Dalam fungsi isPalindrom, setiap karakter dari string dimasukkan ke dalam sebuah stack.
+Karakter-karakter tersebut kemudian dipop dari stack satu per satu, dan disusun ke dalam sebuah string reversedWord.
+Setelah semua karakter dipop dan disusun, string word dan reversedWord dibandingkan. Jika keduanya sama, maka fungsi mengembalikan true, menunjukkan bahwa string tersebut merupakan palindrom. Jika tidak sama, fungsi mengembalikan false.
+Di dalam fungsi main, pengguna diminta untuk memasukkan sebuah kalimat.
+Kalimat tersebut kemudian dimasukkan ke fungsi isPalindrom untuk diperiksa apakah merupakan palindrom atau tidak.
+Hasil dari pemeriksaan ditampilkan kepada pengguna.
+
+Output yang diberikan dalam hasil di atas menunjukkan bahwa kata "ini" merupakan palindrom, karena jika dibaca dari depan atau belakang, hasilnya tetap sama.
 
 ### 2. Ubah guided queue diatas agar menjadi program inputan user dan program menu.
-
 ```
 #include <iostream>
 #include <string>
@@ -432,3 +445,30 @@ int main() {
     return 0;
 }
 ```
+## hasil output
+Pilih menu:
+1. Cek apakah kalimat adalah palindrom
+2. Keluar
+Pilihan: 1
+Masukkan kalimat: ada
+Kalimat ini adalah palindrom.
+
+## penjelasan
+ program yang memungkinkan pengguna untuk memeriksa apakah sebuah kalimat yang dimasukkan merupakan palindrom atau tidak. Program ini juga memberikan opsi kepada pengguna untuk keluar dari program.
+
+Di dalam program ini:
+
+Fungsi isPalindrom menerima sebuah string sebagai argumen dan mengembalikan nilai boolean yang menunjukkan apakah string tersebut merupakan palindrom atau tidak. Fungsinya sama dengan program sebelumnya.
+Di dalam fungsi main, terdapat sebuah loop while(true) yang membuat program terus berjalan sampai pengguna memilih opsi untuk keluar.
+Pengguna diberikan opsi untuk memilih menu:
+Memeriksa apakah sebuah kalimat adalah palindrom.
+Keluar dari program.
+Jika pengguna memilih menu untuk memeriksa palindrom, mereka diminta untuk memasukkan kalimat.
+Kalimat tersebut kemudian dimasukkan ke fungsi isPalindrom untuk diperiksa apakah merupakan palindrom atau tidak.
+Hasil dari pemeriksaan ditampilkan kepada pengguna.
+Jika pengguna memilih untuk keluar, program akan berhenti.
+
+Output akan memberikan informasi apakah kalimat yang dimasukkan oleh pengguna merupakan palindrom atau tidak. Jika kalimat adalah palindrom, maka program akan memberikan pesan "Kalimat ini adalah palindrom.", dan sebaliknya jika bukan palindrom, maka program akan memberikan pesan "Kalimat ini bukan palindrom."
+
+## kesimpulan
+Pada modul imi mengetahui tentang stack dan queue. Stack adalah struktur data sederhana yang digunakan untuk menyimpan data (mirip dengan Linked Lists). Dalam tumpukan, urutan kedatangan data penting, sedangkan queue adalah struktur data yang digunakan untuk menyimpan data dengan metode FIFO (First-In First-Out). Data yang pertama dimasukkan ke dalam queue akan menjadi data yang pertama pula untuk dikeluarkan dari queue. Perbedaan antara stack dan queue terdapat pada aturan penambahan dan penghapusan elemen. Pada stack, operasi penambahan dan penghapusan elemen dilakukan di satu ujung. Elemen yang terakhir diinputkan akan berada paling dengan dengan ujung atau dianggap paling atas sehingga pada operasi penghapusan, elemen teratas tersebut akan dihapus paling awal, sifat demikian dikenal dengan LIFO. Pada Queue, operasi tersebut dilakukan ditempat berbeda (melalui salah satu ujung) karena perubahan data selalu mengacu pada Head, maka hanya ada 1 jenis insert maupun delete. Prosedur ini sering disebut Enqueue dan Dequeue pada kasus Queue. Untuk Enqueue, cukup tambahkan elemen setelah elemen terakhir Queue, dan untuk Dequeue, cukup "geser"kan Head menjadi elemen selanjutnya dan pada program ini kita membuat program untuk menentukan apakah kalimat tersebut yang diinputkan dalam program stack adalah palindrom/tidak dan mengubah guided queue agar menjadi program inputan user dan program menu.
