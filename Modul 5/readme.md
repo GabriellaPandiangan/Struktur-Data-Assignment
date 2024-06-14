@@ -211,8 +211,9 @@ int main() {
 
 return 0;
 }
+```
 
-//hasil output
+## hasil output
 ```Nama Hewan: Singa
  Jenis Kelamin: Jantan
  Cara Berkembangbiak: Melahirkan
@@ -299,7 +300,7 @@ int main() {
 }
 ```
 
-//hasil output
+## hasil output
 ```
 Koleksi Buku:
 Buku 1:
@@ -337,7 +338,17 @@ Penerbit: Publisher E
 Tebal: 270 halaman
 Harga: 19.99
 ```
+## penjelasan
+Program ini merupakan contoh penggunaan struktur (struct) dalam bahasa pemrograman C++. Struktur digunakan untuk menggabungkan beberapa tipe data yang berbeda ke dalam satu kesatuan yang lebih besar.
 
+Pada program ini, sebuah struct bernama buku dideklarasikan. Struct ini memiliki lima array yang masing-masing menyimpan informasi tentang judul buku, pengarang, penerbit, tebal buku (dalam halaman), dan harga buku.
+
+Kemudian, dalam fungsi main(), sebuah variabel koleksi dengan tipe data buku dibuat untuk menyimpan koleksi buku. Data buku diisi ke dalam variabel koleksi menggunakan indeks array yang sesuai.
+
+Setelah data buku diisi, dilakukan iterasi melalui variabel koleksi untuk menampilkan informasi buku yang tersimpan. Setiap informasi buku (judul, pengarang, penerbit, tebal, dan harga) ditampilkan di layar menggunakan perulangan for.
+
+Hasil output:
+menampilkan informasi buku dari indeks 1 hingga 5 sesuai dengan pengisian data yang dilakukan dalam fungsi main(). Setiap buku ditampilkan dengan judul, pengarang, penerbit, tebal, dan harga yang sesuai.
 
 ### 2. Apa yang terjadi jika deklarasi variabel struct yang dibuat pada tugas guided I,berjenis Array.
 Jawaban:
@@ -405,7 +416,7 @@ int main() {
 }
 ```
 
-//hasil output
+## hasil output
 ```Koleksi Buku:
 Buku 1:
 Judul: Pride and Prejudice
@@ -442,3 +453,15 @@ Penerbit: Publisher E
 Tebal Buku: 270 halaman
 Harga Buku: 19.99
 ```
+## penjelasan
+Pada program ini, struktur buku masih menyimpan informasi tentang judul, pengarang, penerbit, tebal buku, dan harga buku. Namun, kali ini, pengisian data dimulai dari indeks 0 hingga 4, sesuai dengan indeks array dalam bahasa C++ yang dimulai dari 0.
+
+Data buku diisi ke dalam variabel koleksi menggunakan indeks array yang sesuai dengan urutan buku. Misalnya, buku pertama diisi pada indeks 0, buku kedua diisi pada indeks 1, dan seterusnya.
+
+Hasil output menampilkan informasi buku dengan cara yang sama seperti sebelumnya, namun dengan beberapa perubahan kecil dalam format penampilan, seperti penambahan "Buku" sebelum nomor buku, dan penyesuaian penulisan untuk tebal dan harga buku.
+
+## kesimpulan
+pada modul ini  kita belajar mengenai struct yang merupakan tipe data bentukan yang berisi kumpulan variabel-variabel yang bernaung dalam satu nama yang sama dan memiliki kaitan satu sama lain. Penggunaan/pemakaian tipe data struct dilakukan dengan membuat suatu variabel yang bertipe data struct tersebut. Pengaksesan elemen struct dilakukan secara individual dengan menyebutkan nama variabel struct diikuti dengan operator titik (.). Terdapat 3 contoh cara penggunaan struct diatas dan kita dapat meingimplementasikan mengenai memodifikasi kode pada guided, sehingga setiap item yang terdapat pada struct buku berupa array yang berukuran 5, isi dengan data kemudian tampilkan dan mengubah deklarasi variable struct menjadi berjenis array
+
+## references
+{1]Hariyanto, Bambang, 2000, Struktur Data, Bandung.
