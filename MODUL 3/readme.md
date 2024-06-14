@@ -64,14 +64,14 @@ int main() {
     print_array(a, length);
 }
 ```
-// Output array
+## Output array
 Urutan bilangan sebelum sorting: 
 22.1    15.3    8.2     33.21   99
 
 Urutan bilangan setelah sorting: 
 8.2     15.3    22.1    33.21   99
 ```
-### 2. Mengurutkan karakter secara descending (dari terbesar hingga terkecil) menggunakan Algoritma Insertion Sort
+## 2. Mengurutkan karakter secara descending (dari terbesar hingga terkecil) menggunakan Algoritma Insertion Sort
 ```
 #include <iostream>
 using namespace std;
@@ -105,16 +105,18 @@ int main() {
     print_array(a, length);
 }
 
-//output array
+## output array
+```
 Urutan karakter sebelum sorting: 
 c       f       a       z       d       p
 
 Urutan karakter setelah sorting: 
 z       p       f       d       c       a
+```
 ## Unguided
 
 ### 1. Kelas S1 IF 2016 G memiliki 5 mahasiswa. Pada akhir semester mereka menerima lembar Indeks Prestasi Semester (IPS), masing-masing mahasiswa tersebut memiliki IPS sebagai berikut: {3.8, 2.9, 3.3, 4.0, 2.4}. Buatlah program untuk mengurutkan IPS mahasiswa tersebut dari yang terbesar hingga terkecil dengan menggunakan algoritma Selection Sort!
-```C++
+```
 #include <iostream>
 
 void selectionSort(double arr[], int n) {
@@ -154,13 +156,16 @@ int main() {
 
     return 0;
 }
-//output array
+```
+## output array
+```
 IPS sebelum diurutkan:
 3.8 2.9 3.3 4 2.4 
 IPS setelah diurutkan:
 4 3.8 3.3 2.9 2.4
+```
 
-##Penjelasan
+## Penjelasan
 Deklarasi Fungsi selectionSort:
 Fungsi ini menerima sebuah array arr dan panjang array n. Fungsi tersebut mengurutkan array arr dalam urutan non-menurun menggunakan algoritma selection sort.
 
@@ -184,7 +189,7 @@ Setelah diurutkan dengan menggunakan algoritma selection sort, array IPS memilik
 
 ### 2. Pak RT memiliki 10 warga dengan nama: siti, situ, sana, ana, ani, caca, cici, dida, dodo, dan dadi. Supaya mudah dalam melakukan pencarian, Pak RT akan mengurutkan namanama tersebut sesuai dengan alfabet. Buatlah program untuk membantu Pak RT dengan menggunakan algoritma Bubble Sort!
 
-```C++
+```
 #include <iostream>
 #include <string>
 
@@ -235,12 +240,13 @@ int main() {
     return 0;
 }
 ```
-##output
+## output
 ```Nama sebelum diurutkan: siti situ sana ana ani caca cici dida dodo dadi 
-Nama setelah diurutkan: ana ani caca cici dadi dida dodo sana siti situ```
+Nama setelah diurutkan: ana ani caca cici dadi dida dodo sana siti situ
+```
 
 
-##penjelasan program dan hasil output
+## penjelasan program dan hasil output
 
 Program di atas adalah implementasi algoritma Bubble Sort untuk mengurutkan array string berisi nama. Berikut penjelasan dari program tersebut dan hasil outputnya:
 
@@ -263,7 +269,7 @@ Sebelum diurutkan, array names memiliki nilai: {"siti", "situ", "sana", "ana", "
 Setelah diurutkan dengan menggunakan algoritma Bubble Sort, array names memiliki nilai: {"ana", "ani", "caca", "cici", "dadi", "dida", "dodo", "sana", "siti", "situ"}.
 
 ### 3. Buatlah program yang meminta user menginputkan suatu bilangan n dan meminta user untuk menginputkan sejumlah n karakter. Kemudian program akan melakukan sorting secara menaik (ascending) dan menurun (descending)
-```C++
+```
 #include <iostream>
 using namespace std;
 
@@ -324,8 +330,8 @@ int main() {
 
     return 0;
 }
-
-##output
+``` 
+## output
 ```
 Masukkan jumlah karakter: 5
 Masukkan 5 karakter:
@@ -333,7 +339,7 @@ a,c,b,e,d
 Hasil sorting ascending: a b c d e 
 Hasil sorting descending: e d c b a
 ```
-##Penjelasan Program
+## Penjelasan Program
 Program di atas adalah sebuah program C++ yang meminta pengguna untuk memasukkan sejumlah karakter, kemudian melakukan pengurutan karakter tersebut secara ascending dan descending menggunakan algoritma Bubble Sort. Berikut adalah penjelasan singkat dari program dan hasil outputnya:
 
 Fungsi swap: Fungsi ini bertugas untuk menukar nilai dua variabel yang diberikan.
@@ -354,9 +360,9 @@ Pengguna diminta untuk memasukkan 5 karakter, misalnya: a, c, b, e, d.
 Setelah diurutkan secara ascending, karakter-karakter tersebut menjadi: a, b, c, d, e.
 Setelah diurutkan secara descending, karakter-karakter tersebut menjadi: e, d, c, b, a.
 
-##kesimpulan
+## kesimpulan
 Pada modul ini kita belajar mengenai sorting, terutama pada bubble sorting dan insertion sorting. Bubble sorting yang mengacu pada teknik pengurutan yang biasanya digunakan untuk mengurutkan daftar kecil[1]. Dimulai dengan membandingkan item pertama dengan item kedua, item kedua dengan item ketiga dan seterusnya hingga menemukan satu item yang tidak berurutan. Kemudian menukar dua item dan memulai kembali. Lalu insertion sorting yang mengacu pada algoritma pengurutan sederhana yang membangun larik (atau daftar) yang diurutkan akhir satu per satu[1]. cara mengimplementasikan sorting, yaitu membuat program untuk mengurutkan Indeks Prestasi Mahasiswa dari terbesar hingga terkecil menggunakan selection sort, membuat program untuk mengurutkan 10 nama warga sesuai alfabet dengan menggunakan bubble sort, dan membuat program yang meminta user menginputkan suatu bilangan n dan meminta user untuk menginputkan sejumlah n karakter. Kemudian program akan melakukan sorting secara menaik (ascending) dan menurun (descending)[1] Donald Knuth,The art of computer programming, volume 3: sorting and searching , Third Edition . Addison-Wesley, 1997
-#references
+## references
 [1] Wikipedia, the free encyclopedia. 2007. Tanggal akses: 11 April 2024 pukul 23.00 WIB
 
 [2] Z. Ullah, “Understanding Sorting Techniques Using C++.” Sam Higginbottom Institute of Agriculture, Technology & Sciences, Allahabad, India, Apr. 2016
