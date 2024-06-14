@@ -107,7 +107,6 @@ Pengarang : Gabriella
 Penerbit : Gramedia
 Tebal Halaman300
 Harga buku : 120000
-```
 
 //buku 2
 ```#include <iostream>
