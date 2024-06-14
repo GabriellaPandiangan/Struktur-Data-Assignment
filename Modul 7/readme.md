@@ -448,12 +448,14 @@ int main() {
 }
 ```
 ## hasil output
+```
 Pilih menu:
 1. Cek apakah kalimat adalah palindrom
 2. Keluar
 Pilihan: 1
 Masukkan kalimat: ada
 Kalimat ini adalah palindrom.
+```
 
 ## penjelasan
  program yang memungkinkan pengguna untuk memeriksa apakah sebuah kalimat yang dimasukkan merupakan palindrom atau tidak. Program ini juga memberikan opsi kepada pengguna untuk keluar dari program.
@@ -474,3 +476,8 @@ Output akan memberikan informasi apakah kalimat yang dimasukkan oleh pengguna me
 
 ## kesimpulan
 Pada modul imi mengetahui tentang stack dan queue. Stack adalah struktur data sederhana yang digunakan untuk menyimpan data (mirip dengan Linked Lists). Dalam tumpukan, urutan kedatangan data penting, sedangkan queue adalah struktur data yang digunakan untuk menyimpan data dengan metode FIFO (First-In First-Out). Data yang pertama dimasukkan ke dalam queue akan menjadi data yang pertama pula untuk dikeluarkan dari queue. Perbedaan antara stack dan queue terdapat pada aturan penambahan dan penghapusan elemen. Pada stack, operasi penambahan dan penghapusan elemen dilakukan di satu ujung. Elemen yang terakhir diinputkan akan berada paling dengan dengan ujung atau dianggap paling atas sehingga pada operasi penghapusan, elemen teratas tersebut akan dihapus paling awal, sifat demikian dikenal dengan LIFO. Pada Queue, operasi tersebut dilakukan ditempat berbeda (melalui salah satu ujung) karena perubahan data selalu mengacu pada Head, maka hanya ada 1 jenis insert maupun delete. Prosedur ini sering disebut Enqueue dan Dequeue pada kasus Queue. Untuk Enqueue, cukup tambahkan elemen setelah elemen terakhir Queue, dan untuk Dequeue, cukup "geser"kan Head menjadi elemen selanjutnya dan pada program ini kita membuat program untuk menentukan apakah kalimat tersebut yang diinputkan dalam program stack adalah palindrom/tidak dan mengubah guided queue agar menjadi program inputan user dan program menu.
+## references
+[1] Stroustrup, B., A Tour of C++ Third Edition. United States: Pearson Education, Inc., 2023.
+
+[2] Quinn, R., Advanced C++ Programming Cookbook. United Kingdoms: Packt Publishing Ltd., 2020.
+
