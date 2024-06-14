@@ -14,6 +14,7 @@ memanggil dirinya sendiri. Dalam sebuah fungsi rekursif pemanggilan dapat terjad
 
 
 Kode rekursif cenderung lebih singkat dan lebih mudah dibuat dibandingkan dengan kode iteratif. Biasanya, perulangan dapat diubah menjadi fungsi rekursif saat proses kompilasi atau interpretasi. Rekursi sangat efektif untuk menangani tugas yang dapat diuraikan menjadi sub tugas yang serupa. Sebagai contoh, masalah pengurutan, pencarian, dan penjelajahan sering kali dapat diselesaikan dengan solusi rekursif yang sederhana.
+
 Jenis-jenis Rekursi
 Terdapat dua jenis fungsi rekursi yaitu:
 a. Rekursi langsung
@@ -46,6 +47,7 @@ dapat memunculkan potensi bug dan
 kompleksitas pemecahan masalah.
 
 a. Pengertian Hash Table
+
 Hash Table adalah struktur data yang mengorganisir data ke dalam pasangan
 kunci-nilai. Hash table biasanya terdiri dari dua komponen utama: array (atau vektor) dan fungsi hash. Hashing adalah teknik untuk mengubah rentang nilai kunci menjadi rentang indeks array.
 Array menyimpan data dalam slot-slot yang disebut bucket. Setiap bucket
@@ -58,6 +60,7 @@ memetakkannya ke nilai indeks array menggunakan fungsi hash. Kemudian, data
 disimpan pada posisi indeks array yang dihasilkan oleh fungsi hash. Ketika data perlu dicari, input kunci dijadikan sebagai parameter untuk fungsi hash, dan posisi indeks array yang dihasilkan digunakan untuk mencari data. Dalam kasus hash collision, di mana dua atau lebih data memiliki nilai hash yang sama, hash table menyimpan data tersebut dalam slot yang sama dengan Teknik yang disebut chaining.
 
 b. Fungsi Hash Table
+
 Fungsi hash membuat pemetaan antara kunci dan nilai, hal ini dilakukan
 melalui penggunaan rumus matematika yang dikenal sebagai fungsi hash. Hasil
 dari fungsi hash disebut sebagai nilai hash atau hash. Nilai hash adalah
@@ -65,6 +68,7 @@ representasi dari string karakter asli tetapi biasanya lebih kecil dari aslinya.
 
 
 c. Operasi Hash Table
+
 1. Insertion:
 Memasukkan data baru ke dalam hash table dengan memanggil fungsi hash
 untuk menentukan posisi bucket yang tepat, dan kemudian menambahkan
@@ -83,13 +87,14 @@ fungsi hash, dan kemudian memperbarui data yang ditemukan.
 Melalui seluruh hash table untuk memproses semua data yang ada dalam
 tabel.
 
-
 d. Collision Resolution
+
 Keterbatasan tabel hash adalah jika dua angka dimasukkan ke dalam fungsi
 hash menghasilkan nilai yang sama. Hal ini disebut dengan collision. Ada dua
 teknik untuk menyelesaikan masalah ini diantaranya :
 
 1. Open Hashing (Chaining)
+   
 Metode chaining mengatasi collision dengan cara menyimpan semua
 item data dengan nilai indeks yang sama ke dalam sebuah linked list. Setiap
 node pada linked list merepresentasikan satu item data. Ketika ada pencarian
@@ -99,7 +104,7 @@ hash. Ketika linked list memiliki banyak node, pencarian atau penambahan
 item data menjadi lambat, karena harus mencari di seluruh linked list.
 Namun, chaining dapat mengatasi jumlah item data yang besar dengan
 efektif, karena keterbatasan array dihindari.
-2. Closed Hashing
+3. Closed Hashing
    
 ● Linear Probing
 Pada saat terjadi collision, maka akan mencari posisi yang kosong di
@@ -566,3 +571,7 @@ Isi dari tabel hash diprint menggunakan print(). Terlihat bahwa terdapat tabraka
 
 ## kesimpulan
 Rekursif merupakan salah satu proses pengulangan fungsi atau prosedur yang memanggil dirinya sendiri. Dalam sebuah fungsi rekursif pemanggilan dapat terjadi berulang kali. Terdapat dua jenis fungsi rekursi yaitu rekursi langsung dan rekursi tidak langsung. Lalu hashtable adalah struktur data yang mengorganisir data ke dalam pasangan kunci-nilai. Hash table biasanya terdiri dari dua komponen utama: array (atau vektor) dan fungsi hash. Hashing adalah teknik untuk mengubah rentang nilai kunci menjadi rentang indeks array. Dan pada modul ini kita dapat mengetahui mengenai membuat program rekursif langsung dan tidak langsung serta mengimplementasikan hashtable untuk menyimpan data mahasiswa. Setiap mahasiswa memiliki NIM dan nilai. Implementasikan fungsi untuk menambahkan data baru, menghapus data, mencari data berdasarkan NIM, dan mencari data berdasarkan nilai.
+
+## references
+[1] Mailund, T. (2019). The Joys of Hashing: Hash Table Programming with C. Apress.
+[2] Karumanchi, N. (2016). Data Structures and algorithms made easy: Concepts, problems, Interview Questions. CareerMonk Publications.
