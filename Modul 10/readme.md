@@ -351,6 +351,33 @@ PALU: BALI = 4, PALU = 0
 Process returned 0 (0x0) execution time: 11.763. press any key to continue...
 PS D:\Struktur-Data-Assignment\Modul 10>
 ```
+## penjelasan
+ program ini memungkinkan pengguna untuk memasukkan nama simpul dan bobot antar simpul dalam sebuah graf. Graf yang digunakan adalah graf berarah dengan bobot pada setiap sisi.
+
+Header Files: Program menggunakan beberapa header file, yaitu <iostream>, <vector>, dan <string> untuk operasi input-output, penggunaan vektor, dan tipe data string.
+
+Namespace: using namespace std; digunakan untuk mempermudah penggunaan fungsi dan objek yang didefinisikan dalam namespace std.
+
+Variabel NIM: Variabel NIM bertipe string digunakan untuk menyimpan Nomor Induk Mahasiswa.
+
+Input Jumlah Simpul: Pengguna diminta untuk memasukkan jumlah simpul yang akan dimasukkan ke dalam graf.
+
+Input Nama Simpul: Pengguna diminta untuk memasukkan nama setiap simpul. Nama-nama simpul disimpan dalam vektor simpul.
+
+Input Bobot Antar Simpul: Pengguna diminta untuk memasukkan bobot antar simpul. Bobot-bobot disimpan dalam matriks bobot.
+
+Output: 
+
+Program akan mencetak bobot antar simpul dalam bentuk matriks.
+
+Pesan Akhir: Pesan "Process returned 0 (0x0) execution time: 11.763. press any key to continue..." menandakan bahwa program telah selesai dieksekusi.
+
+Hasil output menunjukkan bahwa pengguna telah memasukkan dua simpul, 
+yaitu "BALI" dan "PALU", serta bobot antar simpul. 
+Setiap entri dalam matriks bobot menunjukkan bobot dari simpul ke simpul lainnya. 
+Misalnya, bobot dari simpul "BALI" ke simpul "PALU" adalah 3, 
+dan bobot dari simpul "PALU" ke simpul "BALI" adalah 4. 
+Matriks bobot kemudian dicetak dalam format yang menunjukkan bobot antar setiap pasangan simpul.
 
 ## unguided 2
 ## Modifikasilah guided tree diatas dengan program menu menggunakan input data tree dari user dan tampilkan pada pre-order, in-order, dan post-order.
@@ -576,3 +603,33 @@ Keluar dari program.
 Process returned 0 (0x0) execution time: 11.763. press any key to continue...
 PS D:\Struktur-Data-Assignment\Modul 10>
 ```
+## penjelasan
+program ini memungkinkan pengguna untuk membangun sebuah pohon (tree) dan menentukan bobot antar simpul pada pohon tersebut. Setiap simpul dalam pohon memiliki nilai string yang unik. Program kemudian menyediakan opsi untuk menampilkan pohon dalam tiga urutan traversal yang berbeda: pre-order, in-order, dan post-order.
+
+Header Files: Program menggunakan beberapa header file, yaitu <iostream>, <vector>, <string>, dan <chrono> untuk operasi input-output, penggunaan vektor, tipe data string, dan mengukur waktu eksekusi.
+
+Struct TreeNode: Program mendefinisikan sebuah struct TreeNode yang memiliki tiga anggota: data untuk menyimpan nilai simpul, left untuk menunjukkan simpul kiri, dan right untuk menunjukkan simpul kanan.
+
+Traversal Functions: Program menyediakan tiga fungsi untuk melakukan traversal pada pohon: preOrder, inOrder, dan postOrder. Ketiga fungsi ini menerima simpul sebagai parameter dan mencetak nilai simpul sesuai dengan urutan traversal yang dipilih.
+
+insertNode Function: Program memiliki sebuah fungsi insertNode yang bertugas untuk membangun pohon berdasarkan urutan yang dimasukkan oleh pengguna. Fungsi ini mengembalikan simpul akar pohon yang telah dibangun.
+
+Main Function: Pada fungsi main, program meminta pengguna untuk memasukkan NIM dan menyediakan menu pilihan untuk berinteraksi dengan pohon yang telah dibangun. Pengguna dapat memasukkan data simpul, bobot antar simpul, dan memilih untuk menampilkan pohon dalam tiga urutan traversal yang berbeda.
+
+Output: 
+Hasil output menunjukkan interaksi antara pengguna dengan program. Pengguna diminta untuk memasukkan data simpul, kemudian bobot antar simpul. Setelah itu, pengguna dapat memilih untuk menampilkan pohon dalam tiga urutan traversal yang berbeda. Waktu eksekusi untuk setiap tampilan traversal juga ditampilkan.
+
+Pesan Akhir: Pesan "Process returned 0 (0x0) execution time: 11.763. press any key to continue..." menandakan bahwa program telah selesai dieksekusi.
+
+Hasil output:
+menunjukkan bahwa pengguna telah membangun pohon dengan dua simpul, yaitu "BALI" dan "PALU", serta menentukan bobot antar simpul. Selanjutnya, pengguna memilih untuk menampilkan pohon dalam pre-order, in-order, dan post-order, diikuti dengan waktu eksekusi untuk setiap tampilan traversal. Program berakhir ketika pengguna memilih opsi untuk keluar.
+
+## kesimpulan
+Pada modul ini kita belajar mengenai graf dan tree. Graf atau graph adalah struktur data yang digunakan untuk merepresentasikan hubungan antara objek dalam bentuk node atau vertex dan sambungan antara node tersebut dalam bentuk sisi atau edge. Kemudian pohon/tree adalah struktur data yang sangat umum dan kuat yang menyerupai nyata pohon. Ini terdiri dari satu set node tertaut yang terurut dalam grafik yang terhubung, dimana setiap node memiliki paling banyak satu simpul induk, dan nol atau lebih simpul anak dengan urutan tertentu. Struktur data tree digunakan untuk menyimpan data-data hirarki seperti pohon keluarga, skema pertandingan, struktur organisasi. dari tugas unguided yang diberikan kita dapat belajar membuat program graph dengan menggunakan inputan user untuk menghitung jarak dari sebuah kota ke kota lainnya dan memodifikasi guided tree dengan program menu menggunakan input data tree dari user dan tampilkan pada pre-order, in-order, dan post-order.
+
+## references
+[1] Sjukani, Moh. 2007. Struktur Data (Algoritma & Struktur Data 2) dengan C, C++. Jakarta : Penerbit Mitra Wacana Media.
+
+[2] TylerMSFT. (n.d.). Collections (C++/CX). diakses dari https://learn.microsoft.com/en-us/cpp/cppcx/collections-c-cx?view=msvc-170
+[3] Ashraf, Zeeshan. (2017). Data Structure in C++ Graphically.
+[4] Karumanchi, N. (2011). Data Structures and Algorithms Made Easy: 700 Data Structure and Algorithmic Puzzles. CreateSpace.
