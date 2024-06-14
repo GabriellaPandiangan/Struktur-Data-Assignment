@@ -454,7 +454,7 @@ Pilih menu:
 2. Keluar
 Pilihan: 1
 Masukkan kalimat: ada
-Kalimat ini adalah palindrom.
+Kalimat ini bukan palindrom.
 ```
 
 ## penjelasan
