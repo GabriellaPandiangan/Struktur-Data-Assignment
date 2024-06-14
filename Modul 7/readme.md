@@ -39,6 +39,7 @@ i. Search (Cari): Mencari keberadaan elemen tertentu dalam tumpukan.
 
 
 QUEUE
+
 Queue adalah struktur data yang digunakan untuk menyimpan data dengan metode
 FIFO (First-In First-Out). Data yang pertama dimasukkan ke dalam queue akan
 menjadi data yang pertama pula untuk dikeluarkan dari queue. Queue mirip dengan
