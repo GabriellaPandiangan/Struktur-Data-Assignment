@@ -309,5 +309,51 @@ Node with maximum priority : 5
 Priority queue after extracting maximum : 4 3 2 1 
 Masukkan indeks dan prioritas baru:
 ```
+## penjelasan
+Program ini adalah implementasi dari struktur data priority queue menggunakan heap (binary max-heap).
+fungsi dari setiap program :
 
+Include Libraries: Program mengimpor pustaka iostream untuk masukan/keluaran standar dan pustaka algorithm untuk menggunakan fungsi swap.
 
+Deklarasi Variabel Global:
+
+H[50]: array untuk menyimpan elemen heap.
+heapSize: menyimpan ukuran heap saat ini.
+
+Fungsi-fungsi Dasar Heap:
+
+parent(i), leftChild(i), rightChild(i): Mengembalikan indeks parent, left child, dan right child dari sebuah node.
+shiftUp(i): Mendorong elemen ke atas dalam heap untuk memperbaiki properti heap setelah penambahan elemen.
+shiftDown(i): Mendorong elemen ke bawah dalam heap untuk memperbaiki properti heap setelah penghapusan elemen.
+
+Operasi-operasi Heap:
+
+insert(p): Memasukkan elemen baru p ke dalam heap dan memperbaiki properti heap dengan memanggil shiftUp.
+extractMax(): Menghapus dan mengembalikan elemen terbesar (root) dari heap, lalu memperbaiki heap menggunakan shiftDown.
+changePriority(i, p): Mengubah prioritas elemen pada indeks i menjadi p, lalu memperbaiki heap dengan memanggil shiftUp atau shiftDown tergantung pada kenaikan atau penurunan prioritas.
+getMax(): Mengembalikan nilai elemen terbesar (root) dari heap.
+remove(i): Menghapus elemen pada indeks i dengan menetapkan nilai elemen tersebut menjadi lebih besar dari elemen terbesar di heap, lalu memanggil shiftUp dan extractMax untuk memperbaiki heap.
+
+Fungsi main:
+
+Meminta pengguna memasukkan jumlah elemen dan elemen-elemen tersebut.
+Memasukkan elemen-elemen ke dalam heap menggunakan insert.
+Menampilkan isi priority queue sebelum dan setelah operasi extractMax, changePriority, dan remove.
+Hasil Output:
+
+Pengguna diminta untuk memasukkan jumlah elemen dan elemen-elemen.
+Priority queue awal ditampilkan.
+Nilai elemen dengan prioritas tertinggi diekstrak dan ditampilkan.
+Priority queue setelah penghapusan elemen tertinggi ditampilkan.
+Pengguna diminta untuk memasukkan indeks elemen dan prioritas baru untuk mengubah prioritas sebuah elemen.
+Priority queue setelah perubahan prioritas ditampilkan.
+Pengguna diminta untuk memasukkan indeks elemen yang akan dihapus.
+Priority queue setelah penghapusan elemen ditampilkan.
+Hasil output menunjukkan bahwa program bekerja sesuai yang diharapkan, menunjukkan operasi-operasi dasar pada priority queue menggunakan heap.
+
+## kesimpulan
+Pada modul ini kita belajar mengenai priority queue dan heap. Priority queue adalah jenis queue yang mengatur elemen berdasarkan nilai prioritasnya. Elemen dengan nilai prioritas lebih tinggi umumnya akan diambil sebelum elemen dengan nilai prioritas lebih rendah. Lalu untuk heap dalam struktur data adalah struktur berbasis pohon biner (binary tree) dengan aturan tertentu. Heap memiliki kelebihan dalam hal kecepatan operasi. Menambah atau menghapus elemen dalam heap hanya membutuhkan waktu O(log N), sedangkan mencari elemen minimum/maksimum hanya membutuhkan waktu konstan O(1) sehingga kita dapat memodifikasi guided yang mana heap di konstruksikan secara manual oleh user.
+
+## references
+[1] B. V. Cherkassky and A. V. Goldberg, Heap‐on‐Top Priority Queues, Tech. report 96‐4, NEC Research Institute, Princeton, NJ, 1996
+[2] Goodrich, Tamassia, Mount. Data Structure and Algorithms in C++, Wiley, 2004
