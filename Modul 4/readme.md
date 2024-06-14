@@ -288,6 +288,8 @@ removePunctuation(const string& word): Fungsi ini menerima sebuah string yang me
 splitSentence(const string& sentence): Fungsi ini menerima sebuah string yang mewakili sebuah kalimat, dan membaginya menjadi kata-kata. Ini dilakukan dengan iterasi melalui setiap karakter dalam kalimat, memeriksa jika karakter tersebut adalah spasi, dan kemudian menambahkan kata sebelum spasi tersebut ke dalam vektor kata-kata. Setelah mencapai akhir kalimat, kata terakhir juga ditambahkan ke dalam vektor.
 
 searchWord(const vector<string>& words, const string& target): Fungsi ini melakukan pencarian biner (binary search) pada vektor kata-kata untuk mencari kata target. Ini dilakukan dengan membagi vektor menjadi setengah setiap iterasi dan membandingkan kata tengah dengan kata target. Jika kata tengah sama dengan kata target, fungsi mengembalikan true. Jika tidak, pencarian dilanjutkan ke setengah vektor yang relevan sampai kata target ditemukan atau tidak ada lagi bagian yang tersisa untuk diperiksa.
+
+
 output:
 Output tersebut menunjukkan bahwa kata "metode" ditemukan dalam kalimat yang dimasukkan. Ini menunjukkan bahwa program berhasil menemukan kata yang dimasukkan oleh pengguna dalam kalimat yang juga dimasukkan oleh pengguna.
 
@@ -336,6 +338,8 @@ Penjelasan singkat mengenai program ini:
 hitungVokal(string kalimat): Fungsi ini menerima sebuah string yang mewakili sebuah kalimat dan mengembalikan jumlah huruf vokal dalam kalimat tersebut. Fungsi menggunakan loop for untuk iterasi melalui setiap karakter dalam kalimat dan menghitung jumlah huruf vokal yang ditemukan.
 
 main(): Fungsi utama program, yang meminta pengguna untuk memasukkan sebuah kalimat menggunakan getline(cin, kalimat), kemudian memanggil fungsi hitungVokal() untuk menghitung jumlah huruf vokal dalam kalimat yang dimasukkan, dan akhirnya mencetak jumlah tersebut.
+
+
 output: Output ini menunjukkan bahwa dalam kalimat "saya sedang belajar binary search", terdapat 11 huruf vokal (a, a, e, a, e, a, i, a, a, i, a).
 
 ### 3.Diketahui data = 9, 4, 1, 4, 7, 10, 5, 4, 12, 4. Hitunglah berapa banyak angka 4 dengan menggunakan algoritma Sequential Search!
