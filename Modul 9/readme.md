@@ -336,6 +336,18 @@ PS D:\Struktur-Data-Assignment\Modul 9\output> & .\'unguided1.exe'
 Masukkan bilangan bulat positif: 5
 Faktorial dari 5 adalah: 120
 ```
+## penjelasan program
+Program dimulai dengan mendefinisikan fungsi faktorial(int n) yang mengambil bilangan bulat n sebagai argumen dan mengembalikan nilai faktorial dari n. Fungsi ini menggunakan pendekatan rekursif untuk menghitung faktorial.
+
+Di dalam fungsi faktorial(int n), jika n lebih besar dari 1, maka faktorial dihitung dengan cara mengalikan n dengan hasil faktorial dari n - 1. Ini dilakukan secara rekursif sampai mencapai basis kasus saat n adalah 1, di mana hasil faktorialnya adalah 1.
+
+Fungsi main() meminta pengguna untuk memasukkan sebuah bilangan bulat positif, kemudian memanggil fungsi faktorial() untuk menghitung faktorial dari bilangan tersebut, dan akhirnya mencetak hasilnya.
+
+Hasil Output:
+Pengguna diminta untuk memasukkan sebuah bilangan bulat positif.
+Pengguna memasukkan angka 5.
+Program menghitung faktorial dari 5, yaitu 5 x 4 x 3 x 2 x 1 = 120.
+Hasil faktorial, yaitu 120, dicetak ke layar.
 
 ### 2.Buatlah versi program Rekursif Tidak Langsung (Indirect Recursion) dari soal nomor 1 di atas
 ```
@@ -367,6 +379,25 @@ PS D:\Struktur-Data-Assignment\Modul 9\output> & .\'unguided2.exe'
 Masukkan bilangan bulat positif: 5
 Faktorial dari 5 adalah: 120
 ```
+## penjelasan
+Program ini memiliki dua fungsi utama: helper(int n, int result) dan factorial(int n).
+
+Fungsi helper(int n, int result) merupakan sebuah fungsi bantuan yang menggunakan pendekatan rekursif untuk menghitung faktorial. Fungsi ini mengambil dua parameter: n sebagai bilangan bulat yang akan dihitung faktorialnya, dan result sebagai hasil perkalian yang terakumulasi selama rekursi.
+
+Jika n sama dengan 0 atau 1, maka hasil terakumulasi (result) akan dikembalikan. Ini adalah basis kasus dari rekursi.
+
+Jika n bukan 0 atau 1, maka fungsi akan memanggil dirinya sendiri dengan mengurangi n sebesar 1 dan mengalikan result dengan n. Proses ini akan terus berulang hingga mencapai basis kasus.
+
+Fungsi factorial(int n) adalah fungsi utama yang dipanggil dari main(). Fungsi ini hanya memanggil helper() dengan result awal 1.
+
+Di dalam main(), pengguna diminta untuk memasukkan sebuah bilangan bulat positif, kemudian program akan menghitung faktorial dari bilangan tersebut menggunakan fungsi factorial() dan mencetak hasilnya.
+
+Hasil Output:
+Pengguna diminta untuk memasukkan sebuah bilangan bulat positif.
+Pengguna memasukkan angka 5.
+Program menghitung faktorial dari 5, yaitu 5 x 4 x 3 x 2 x 1 = 120.
+Hasil faktorial, yaitu 120, dicetak ke layar.
+
 ### 3
 ```
 #include <iostream>
@@ -503,3 +534,35 @@ Hash Table:
 9:
 10:
 ```
+## penjelasan
+Program ini mengimplementasikan  dari tabel hash (hash table) menggunakan chaining untuk menangani tabrakan (collision)
+
+Penjelasan Program:
+Kelas HashNode digunakan untuk merepresentasikan node dalam tabel hash. Setiap HashNode memiliki dua atribut: nim untuk menyimpan NIM mahasiswa dan nilai untuk menyimpan nilai mahasiswa.
+
+Kelas HashTable memiliki beberapa fungsi untuk mengelola tabel hash, antara lain:
+
+hashFunc(string key): Menghitung hash value dari sebuah string key dengan menjumlahkan nilai ASCII dari setiap karakter dan kemudian mengambil sisa hasil bagi terhadap ukuran tabel (TABLE_SIZE).
+insert(string nim, int nilai): Memasukkan data ke dalam tabel hash. Jika terjadi tabrakan, data akan dimasukkan ke dalam linked list yang terdapat di indeks yang sama.
+remove(string nim): Menghapus data dari tabel hash berdasarkan NIM mahasiswa.
+searchByNim(string nim): Mencari nilai mahasiswa berdasarkan NIM.
+searchByNilai(int nilaiAwal, int nilaiAkhir): Mencari data mahasiswa berdasarkan rentang nilai.
+print(): Mencetak isi dari tabel hash.
+Di dalam main(), beberapa operasi dilakukan:
+
+Beberapa data mahasiswa dimasukkan ke dalam tabel hash menggunakan insert().
+Nilai mahasiswa dicari menggunakan searchByNim().
+Salah satu data mahasiswa dihapus menggunakan remove().
+Data mahasiswa dengan nilai dalam rentang tertentu dicari menggunakan searchByNilai().
+Isi dari tabel hash dicetak menggunakan print().
+
+
+Hasil Output:
+Tiga data mahasiswa dimasukkan ke dalam tabel hash.
+Nilai dari beberapa NIM diprint menggunakan searchByNim().
+Salah satu data mahasiswa dengan NIM "12345" dihapus.
+Data mahasiswa dengan nilai antara 80 hingga 90 dicari dan diprint menggunakan searchByNilai().
+Isi dari tabel hash diprint menggunakan print(). Terlihat bahwa terdapat tabrakan yang diatasi dengan chaining, di mana beberapa HashNode tersimpan dalam linked list pada indeks yang sama.
+
+## kesimpulan
+Rekursif merupakan salah satu proses pengulangan fungsi atau prosedur yang memanggil dirinya sendiri. Dalam sebuah fungsi rekursif pemanggilan dapat terjadi berulang kali. Terdapat dua jenis fungsi rekursi yaitu rekursi langsung dan rekursi tidak langsung. Lalu hashtable adalah struktur data yang mengorganisir data ke dalam pasangan kunci-nilai. Hash table biasanya terdiri dari dua komponen utama: array (atau vektor) dan fungsi hash. Hashing adalah teknik untuk mengubah rentang nilai kunci menjadi rentang indeks array. Dan pada modul ini kita dapat mengetahui mengenai membuat program rekursif langsung dan tidak langsung serta mengimplementasikan hashtable untuk menyimpan data mahasiswa. Setiap mahasiswa memiliki NIM dan nilai. Implementasikan fungsi untuk menambahkan data baru, menghapus data, mencari data berdasarkan NIM, dan mencari data berdasarkan nilai.
