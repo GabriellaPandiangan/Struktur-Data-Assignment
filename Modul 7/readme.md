@@ -9,6 +9,7 @@
 
 ## Dasar Teori
 STACK
+
 Stack adalah struktur data sederhana yang digunakan untuk menyimpan data (mirip
 dengan Linked Lists). Dalam tumpukan, urutan kedatangan data penting. Sebuah
 tumpukan piring di kafetaria adalah contoh bagus dari tumpukan. Piring
