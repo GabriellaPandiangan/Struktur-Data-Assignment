@@ -176,10 +176,11 @@ int main() {
 }
 ```
 ## output
+```
 BINARY SEARCH
 
  Data :   1  8  2  5  4  9  7
-
+```
    
 ## Unguided
 
@@ -271,9 +272,11 @@ int main() {
 ```
 
 ## output
+```
 Masukkan sebuah kalimat: algoritma binary search adalah metode pencarian yang efisien dalam menemukan elemen array yang telah diurutkan    
 Masukkan kata yang ingin dicari: metode
 Kata 'metode' ditemukan dalam kalimat.
+```
 
 ## penjelasan
 Program di atas adalah program yang memungkinkan pengguna untuk memasukkan sebuah kalimat dan sebuah kata yang ingin dicari dalam kalimat tersebut. Program akan membersihkan tanda baca dari kata-kata dalam kalimat, memisahkan kata-kata, mengurutkannya secara alfabetis, dan kemudian menggunakan algoritma pencarian biner (binary search) untuk mencari kata yang dimasukkan oleh pengguna.
@@ -321,9 +324,10 @@ int main() {
 }
 ```
 ## output
+```
 Masukkan sebuah kalimat: saya sedang belajar binary search
 Jumlah huruf vokal dalam kalimat tersebut adalah: 11
-
+```
 ## penjelasan
 Program di atas digunakan untuk menghitung jumlah huruf vokal dalam sebuah kalimat yang dimasukkan oleh pengguna.
 
@@ -369,7 +373,9 @@ int main() {
 }
 ```
 ## output
+```
 Jumlah kemunculan angka 4 dalam data: 4
+```
 ## penjelasan
 Program di atas digunakan untuk melakukan pencarian berapa kali angka 4 muncul dalam sebuah larik data menggunakan metode pencarian sekuensial.
 
