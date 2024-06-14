@@ -174,7 +174,8 @@ int main() {
     binary_search();
     return 0;
 }
-//output
+```
+## output
 BINARY SEARCH
 
  Data :   1  8  2  5  4  9  7
@@ -184,6 +185,7 @@ BINARY SEARCH
 
 ### 1. Buatlah sebuah program untuk mencari sebuah huruf pada sebuah
 kalimat yang sudah di input dengan menggunakan Binary Search
+```
 #include <iostream>
 #include <string>
 #include <vector>
@@ -266,13 +268,15 @@ int main() {
 
     return 0;
 }
-//output
+```
+
+## output
 Masukkan sebuah kalimat: algoritma binary search adalah metode pencarian yang efisien dalam menemukan elemen array yang telah diurutkan    
 Masukkan kata yang ingin dicari: metode
 Kata 'metode' ditemukan dalam kalimat.
 
-### 2.Buatlah sebuah program yang dapat menghitung banyaknya huruf
-vocal dalam sebuah kalimat!
+### 2.Buatlah sebuah program yang dapat menghitung banyaknya huruf vocal dalam sebuah kalimat!
+```
 #include <iostream>
 #include <string>
 
@@ -302,13 +306,13 @@ int main() {
 
     return 0;
 }
-
-//output
+```
+## output
 Masukkan sebuah kalimat: saya sedang belajar binary search
 Jumlah huruf vokal dalam kalimat tersebut adalah: 11
 
 ### 3.Diketahui data = 9, 4, 1, 4, 7, 10, 5, 4, 12, 4. Hitunglah berapa banyak angka 4 dengan menggunakan algoritma Sequential Search!
-```C++
+```
 #include <iostream>
 
 using namespace std;
@@ -341,5 +345,5 @@ int main() {
     return 0;
 }
 ```
-//output
+## output
 Jumlah kemunculan angka 4 dalam data: 4
