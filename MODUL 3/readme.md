@@ -65,6 +65,8 @@ int main() {
 }
 ```
 ## Output array
+
+```
 Urutan bilangan sebelum sorting: 
 22.1    15.3    8.2     33.21   99
 
@@ -104,6 +106,7 @@ int main() {
     cout << "\nUrutan karakter setelah sorting: " << endl;
     print_array(a, length);
 }
+```
 
 ## output array
 ```
