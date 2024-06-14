@@ -281,7 +281,7 @@ int main(){
 }
 ```
 
-// Output 
+## Output 
 ```
 l 6\output> & .\'guided1.exe'
 3
@@ -448,7 +448,7 @@ Enter your choice:
 ### 1.Buatlah program menu Single Linked List Non-Circular untuk menyimpan Nama dan usia mahasiswa, dengan menggunakan inputan dari user. Lakukan operasi berikut: a.	Masukkan data sesuai urutan berikut. (Gunakan insert depan, belakang atau tengah). Data pertama yang dimasukkan adalah nama dan usia anda.[Nama_anda]	[Usia_anda] John	19 Jane	20 Michael	18] Yusuke	19 Akechi	20 Hoshino	18 Karin	18 b.	Hapus data Akechi c.	Tambahkan data berikut diantara John dan Jane : Futaba	18 d.	Tambahkan data berikut diawal : Igor	20 e.	Ubah data Michael menjadi : Reyn	18 f.	Tampilkan seluruh data
 
 
-```C++
+```
 #include <iostream>
 #include <string>
 
@@ -600,7 +600,7 @@ int main() {
     return 0;
 }
 ```
-//output
+## output
 ```
 l 6\output> & .\'unguided1.exe'
 Akechi 20
@@ -633,6 +633,14 @@ John 19
 Futaba 18
 Gabriella 19
 ```
+## penjelasan
+Dalam program ini, terdapat dua kelas utama: Node yang merepresentasikan sebuah node dalam linked list, dan LinkedList yang merupakan kelas utama untuk operasi-operasi pada linked list.
+
+Node memiliki tiga atribut: name (nama), age (umur), dan next (pointer ke node berikutnya).
+LinkedList memiliki operasi-operasi untuk memanipulasi linked list, seperti insertData untuk menyisipkan data baru, insertAfter untuk menyisipkan data setelah node tertentu, deleteNode untuk menghapus node, updateNode untuk memperbarui data pada sebuah node, dan displayList untuk menampilkan seluruh data dalam linked list.
+Pada main() function, linked list dibuat dan diisi dengan beberapa data. Kemudian, operasi-operasi seperti penghapusan, penambahan setelah suatu node, dan pembaruan dilakukan pada linked list, yang diikuti dengan menampilkan isi linked list setiap kali operasi dilakukan.
+
+Hasil output menunjukkan efek dari operasi-operasi yang dilakukan. Misalnya, setelah Akechi dihapus, Futaba disisipkan antara John dan Jane, Michael diperbarui menjadi Reyn, dan Hoshino serta Karin ditambahkan ke linked list. Setiap kali ada perubahan, isi linked list ditampilkan untuk memverifikasi perubahan yang terjadi.
 
 ### 2. Modifikasi Guided Double Linked List dilakukan dengan penambahan operasi untuk menambah data, menghapus, dan update di tengah / di urutan tertentu yang diminta. Selain itu, buatlah agar tampilannya menampilkan Nama produk dan harga. Nama Produk	Harga Originote	60.000 Somethinc	150.000 Skintific	100.000 Wardah	50.000 Hanasui	30.000. Case: 1.	Tambahkan produk Azarine dengan harga 65000 diantara Somethinc dan Skintific 2.	Hapus produk wardah 3.	Update produk Hanasui menjadi Cleora dengan harga 55.000 4.	Tampilkan menu seperti dibawah ini Toko Skincare Purwokerto.       1.	Tambah Data 2.	Hapus Data 3.	Update Data 4.	Tambah Data Urutan Tertentu 5.	Hapus Data Urutan Tertentu 6.	Hapus Seluruh Data 7.	Tampilkan Data 8.	Exit Pada menu 7, tampilan akhirnya akan menjadi seperti dibawah ini :   Nama Produk	Harga   Originote	60.000 Somethinc	150.000 Azarine	65.000 Skintific	100.000 Cleora	55.000
 
@@ -857,7 +865,7 @@ int main() {
     return 0;
 }
 ```
-//output
+## output
 ```
 PS D:\Struktur-Data-Assignment\Modul 6\output> & .\'unguided2.exe'
 
@@ -889,3 +897,18 @@ Toko Skincare Purwokerto
 8. Exit
 Pilih:
 ```
+## penjelasan 
+Program ini memungkinkan pengguna untuk menambah, menghapus, memperbarui, menambahkan data pada posisi tertentu, serta menampilkan data produk.
+
+Struktur Node memiliki empat atribut: productName (nama produk), price (harga produk), prev (pointer ke node sebelumnya), dan next (pointer ke node berikutnya).
+Kelas DoubleLinkedList memiliki beberapa fungsi untuk memanipulasi linked list, seperti addNode untuk menambahkan node baru di akhir, addNodeAtPosition untuk menambahkan node pada posisi tertentu, deleteNode untuk menghapus node berdasarkan nama produk, updateNode untuk memperbarui informasi produk berdasarkan nama produk, display untuk menampilkan semua produk, dan deleteAll untuk menghapus semua produk dari linked list.
+Dalam main() function, pengguna diberi menu pilihan untuk berbagai operasi yang dapat dilakukan pada linked list produk skincare. Pengguna dapat menambahkan data baru, menghapus data, memperbarui data, menambahkan data pada posisi tertentu (walaupun ini belum diimplementasikan), menghapus semua data, menampilkan semua data, atau keluar dari program.
+
+Output yang diberikan menunjukkan tampilan awal menu saat program pertama kali dijalankan dan menampilkan semua produk skincare yang sudah ada dalam linked list.
+## kesimpulan
+linked list yang merupakan suatu bentuk struktur data yang berisi kumpulan data yang disebut sebagai node yang tersusun secara sekuensial, saling sambung menyambung, dinamis, dan terbatas. Setiap elemen dalam linked list dihubungkan ke elemen lain melalui pointer. Masing-masing komponen sering disebut dengan simpul atau node atau verteks. Lalu ada linked list circular yang merupakan linked list yang tidak memiliki akhir karena node terakhir (tail) tidak bernilai ‘NULL’, tetapi terhubung dengan node pertama (head) dan ada double linked List yang merupakan struktur data Linked List yang mirip dengan Single Linked List, namun dengan tambahan satu pointer tambahan pada setiap simpul yaitu pointer prev yang menunjuk ke simpul sebelumnya. program ini mampu mengimplementasikan bagaimana single linked list non-circular bekerja untuk menyimpan nama dan usia mahasiswa dengan menggunakan inputan dari user dan mengimplementasikan double linked list dengan menambahkan CRUD dan memperbaiki tampilan hasilnya.
+
+## references
+[1] Carraway, J. (1996). Doubly-Linked Opportunities. ACM SIG3C 3C ONLINE, Vol. 3, No. 1, pp.9-12
+[2] M. R. Abu Sara, “Balanced Linked List (BaLL): A Modified Linked List for Efficiently Maintaining a Sorted Sequence of Data,” vol. 6, Apr. 2021, doi: https://doi.org/10.15282/ijsecs.6.1.2020.6.0069.
+
