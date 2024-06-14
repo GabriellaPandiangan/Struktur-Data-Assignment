@@ -275,6 +275,19 @@ Masukkan sebuah kalimat: algoritma binary search adalah metode pencarian yang ef
 Masukkan kata yang ingin dicari: metode
 Kata 'metode' ditemukan dalam kalimat.
 
+## penjelasan
+Program di atas adalah program yang memungkinkan pengguna untuk memasukkan sebuah kalimat dan sebuah kata yang ingin dicari dalam kalimat tersebut. Program akan membersihkan tanda baca dari kata-kata dalam kalimat, memisahkan kata-kata, mengurutkannya secara alfabetis, dan kemudian menggunakan algoritma pencarian biner (binary search) untuk mencari kata yang dimasukkan oleh pengguna.
+
+fungsi:
+
+removePunctuation(const string& word): Fungsi ini menerima sebuah string yang mewakili sebuah kata, dan mengembalikan kata tersebut tanpa tanda baca. Ini dilakukan dengan iterasi melalui setiap karakter dalam kata dan memeriksa apakah karakter tersebut merupakan huruf atau angka. Jika ya, karakter tersebut ditambahkan ke string yang bersih (tanpa tanda baca).
+
+splitSentence(const string& sentence): Fungsi ini menerima sebuah string yang mewakili sebuah kalimat, dan membaginya menjadi kata-kata. Ini dilakukan dengan iterasi melalui setiap karakter dalam kalimat, memeriksa jika karakter tersebut adalah spasi, dan kemudian menambahkan kata sebelum spasi tersebut ke dalam vektor kata-kata. Setelah mencapai akhir kalimat, kata terakhir juga ditambahkan ke dalam vektor.
+
+searchWord(const vector<string>& words, const string& target): Fungsi ini melakukan pencarian biner (binary search) pada vektor kata-kata untuk mencari kata target. Ini dilakukan dengan membagi vektor menjadi setengah setiap iterasi dan membandingkan kata tengah dengan kata target. Jika kata tengah sama dengan kata target, fungsi mengembalikan true. Jika tidak, pencarian dilanjutkan ke setengah vektor yang relevan sampai kata target ditemukan atau tidak ada lagi bagian yang tersisa untuk diperiksa.
+output:
+Output tersebut menunjukkan bahwa kata "metode" ditemukan dalam kalimat yang dimasukkan. Ini menunjukkan bahwa program berhasil menemukan kata yang dimasukkan oleh pengguna dalam kalimat yang juga dimasukkan oleh pengguna.
+
 ### 2.Buatlah sebuah program yang dapat menghitung banyaknya huruf vocal dalam sebuah kalimat!
 ```
 #include <iostream>
@@ -310,6 +323,16 @@ int main() {
 ## output
 Masukkan sebuah kalimat: saya sedang belajar binary search
 Jumlah huruf vokal dalam kalimat tersebut adalah: 11
+
+## penjelasan
+Program di atas digunakan untuk menghitung jumlah huruf vokal dalam sebuah kalimat yang dimasukkan oleh pengguna.
+
+Penjelasan singkat mengenai program ini:
+
+hitungVokal(string kalimat): Fungsi ini menerima sebuah string yang mewakili sebuah kalimat dan mengembalikan jumlah huruf vokal dalam kalimat tersebut. Fungsi menggunakan loop for untuk iterasi melalui setiap karakter dalam kalimat dan menghitung jumlah huruf vokal yang ditemukan.
+
+main(): Fungsi utama program, yang meminta pengguna untuk memasukkan sebuah kalimat menggunakan getline(cin, kalimat), kemudian memanggil fungsi hitungVokal() untuk menghitung jumlah huruf vokal dalam kalimat yang dimasukkan, dan akhirnya mencetak jumlah tersebut.
+output: Output ini menunjukkan bahwa dalam kalimat "saya sedang belajar binary search", terdapat 11 huruf vokal (a, a, e, a, e, a, i, a, a, i, a).
 
 ### 3.Diketahui data = 9, 4, 1, 4, 7, 10, 5, 4, 12, 4. Hitunglah berapa banyak angka 4 dengan menggunakan algoritma Sequential Search!
 ```
@@ -347,3 +370,16 @@ int main() {
 ```
 ## output
 Jumlah kemunculan angka 4 dalam data: 4
+## penjelasan
+Program di atas digunakan untuk melakukan pencarian berapa kali angka 4 muncul dalam sebuah larik data menggunakan metode pencarian sekuensial.
+
+sequentialSearch(int arr[], int n, int key): Fungsi ini menerima tiga parameter, yaitu larik data (arr), panjang larik (n), dan kunci pencarian (key). Fungsi ini melakukan pencarian sekuensial dalam larik data untuk mencari berapa kali angka yang sama dengan kunci pencarian muncul. Setiap kali angka yang sama dengan kunci ditemukan, variabel count akan ditambah satu.
+
+main(): Fungsi utama program, di mana larik data yang diberikan adalah {9, 4, 1, 4, 7, 10, 5, 4, 12, 4}. Panjang larik dihitung dengan membagi ukuran total larik dengan ukuran satu elemen larik. Kemudian, angka yang akan dicari adalah 4. Fungsi sequentialSearch() dipanggil untuk mencari berapa kali angka 4 muncul dalam larik data, dan hasilnya disimpan dalam variabel count. Hasil ini kemudian dicetak.
+output: Output ini menunjukkan bahwa angka 4 muncul sebanyak 4 kali dalam larik data yang diberikan.
+## kesimpulan
+Pada modul ini kita belajar tentang algoritma searching. Ada dua macam teknik pencarian yaitu sequential search dan binary search. Perbedaan dari dua teknik ini terletak pada keadaan data. Sequential search digunakan apabila data dalam keadaan acak atau tidak terurut. Sebaliknya, binary search digunakan pada data yang sudah dalam keadaan urut dan belajar cara membuat program untuk mencari sebuah huruf pada sebuah kalimat yang sudah di input dengan menggunakan Binary Search, membuat program yang dapat menghitung banyaknya huruf vocal dalam sebuah kalimat, dan menghitung berapa banyak angka 4 dengan menggunakan algoritma Sequential Search.
+
+## references
+[1] N. Sultana, S. Paira, S. Chandra, and S. K. Alam, “A brief study and analysis of different searching algorithms,” 2017 Second International Conference on Electrical, Computer and Communication Technologies (ICECCT), Feb. 2017. doi:10.1109/icecct.2017.8117821
+[2] "Algoritma pencarian," Wikipedia, 03 Maret 2024. [Online]. Available: https://id.wikipedia.org/wiki/Algoritma_pencarian. [Accessed 25 April 2024].
